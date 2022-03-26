@@ -1,44 +1,283 @@
-body    {
-    background-color: #ba3715;
+/* 手機板 375*667 */
+/* ----手機版 模組化 -------*/
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: normal;
     color: #ffffff;
 }
 
-/* 手機板 375*667 */
-/* 手機版 模組化 */
+body    {
+    background-color: #ba3715;
+}
+
+/* *{
+    outline: 1px greenyellow solid;
+} */
+
+/* 字體大小 */
+a   {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.4rem;
+}
+
+h5{
+    font-size: 1.2rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+/* 排列顯示 */
 .container  {
-    padding: 10px 15px;
+    padding: 0px 20px;
 }
 
 .row    {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* 手機板 */
-/* 手機板 NAV*/
+.display-n{
+    display: none;
+}
+
+/* 手機 */
+/* NAV 手機 */
 nav {
     width: 100%;
     height: 80px;
+    position: fixed;
+    background-color: #ba3715;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.nav-col-left   {
-    width: 50%;
+.nav-container {
+    height: 100%;
+    padding: 10px 20px;
 }
-.nav-logo img{
+
+.nav-row{
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-col-logo   {
+    
+}
+
+.nav-logo{
     width: 50px;
     height: 50px;
 }
 
-.nav-col-right  {
-    width: 50%;
+.nav-logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-col-menu  {
+    
 } 
 
 .nav-btn-menu-off   {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .nav-btn-menu-off i {
-    width: 30px;
-    height: 30px;
+    font-size: 30px;
+}
+
+.nav-btn-menu-on{
+
+}
+
+.nav-btn-menu-on i{
+    font-size: 40px;
+}
+
+/* 跳出選單頁面 */
+.menusection{
+    position: absolute;
+    width: 80%;
+    height: calc(100vh - 80px);
+    top: 80px;
+    left: 20%;
+    background-color: rgba(188, 54, 21, 0.5);
+    backdrop-filter: blur(5px) ;
+    /* 給動畫用 */
+    transform: translateX(100%);
+}
+
+.menu-container{
+    height: 100%;
+    padding: 40px 20px;
+    
+}
+
+.menu-row{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-col:first-child div, .menu-col:first-child h3{
+    padding: 16px 0;
+    text-align: center;
+}
+
+.menu-col:first-child i{
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.menu-col:last-child{
+    width: 100%;
+}
+
+.menu-col:last-child div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-col:last-child i{
+    font-size: 25px;
+    padding: 0 6px;
+}
+
+/* HEADER 手機版 */
+header  {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.header-container{
+    position: relative;
+    width: 100%;
+}
+
+/* 無限輪播動畫 */
+.header-title{
+    width: 100%;
+    height: 375px;
+    border-top: .6rem solid white;
+    border-bottom: .6rem solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.header-train{
+    display: flex;
+}
+
+.header-slogan{
+    white-space: nowrap;
+    font-size: 10rem;
+    flex-grow: 0;
+}
+
+/* 黑膠唱片動畫 */
+.vinyl{
+    position: relative;
+    width: 280px;
+    height: 280px;
+}
+
+.header-vinyl.vinyl{
+    position: absolute;
+    top: calc(50% - 140px);
+    left: calc(50% - 140px);
+}
+
+.vinyl-disc-move{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* transform: translateX(50px); */
+}
+
+.vinyl-disc{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../svg/vinyl.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.vinyl-mask{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 35%;
+    background: url(../img/cover1-kana.jpeg) no-repeat center / cover;
+    -webkit-mask: url(../svg/vinyl-mask.svg);
+    mask: url(../svg/vinyl-mask.svg) no-repeat center center / auto;
+}
+
+.vinyl-cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/cover1-kana.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* LISTEN SECTION 手機版 */
+.listensection{
+    width: 100%;
+}
+
+.listensection-container{
+    width: 100%;
+}
+
+.listensection-row{
+    
+}
+
+.listen-section-col{
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.listen-recorder{
+    outline: 4px greenyellow solid;
+    width: 280px;
+    height: 280px;
+    position: relative;
 }
