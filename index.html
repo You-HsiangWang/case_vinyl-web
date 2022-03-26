@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -20,19 +25,92 @@
     <nav>
         <div class="container nav-container">
             <div class="row nav-row">
-                <div class="nav-col-left">
+                <div class="nav-col-logo">
                     <div class="nav-logo">
                         <img src="./img/logo.png" alt="">
                     </div>
                 </div>
-                <div class="nav-col-right">
+                <div class="nav-col-menu">
                     <div class="nav-btn-menu-off">
                         <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <!-- toggle動畫 -->
+                    <div class="nav-btn-menu-on display-n">
+                        <i class="fa-solid fa-xmark"></i>
+                        <div class="menusection">
+                            <div class="menu-container container">
+                                <div class="menu-row">
+                                    <div class="menu-col">
+
+                                        <div class="menu-btn-shop">
+                                            <i class="fa-solid fa-bag-shopping"></i>
+                                            <i class="fa-regular fa-user"></i>
+                                        </div>
+                                        <h3 class="menu-btn-link">
+                                            Store
+                                        </h3>
+                                        <h3 class="menu-btn-link">
+                                            Contact
+                                        </h3>
+
+                                    </div>
+                                    <div class="menu-col">
+
+                                        <div class="menu-btn-social">
+                                            <i class="fa-brands fa-instagram"></i>
+                                            <i class="fa-brands fa-facebook"></i>
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+    <header>
+        <div class="header-container">
+            <div class="header-title">
+                <div class="header-train">
+                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                </div>
+                <div class="header-train">
+                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                </div>
+                <div class="header-train">
+                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                </div>
+            </div>
+            <div class="header-vinyl vinyl">
+                <div class="vinyl-disc-move">
+                    <div class="vinyl-disc">
+                    </div>
+                    <div class="vinyl-mask"></div>
+                </div>
+                <div class="vinyl-cover"></div>
+            </div>
+        </div>
+    </header>
+    <div class="listensection">
+        <div class="listensection-container container">
+            <div class="listensection-row row">
+                <div class="listen-section-col">
+                    <div class="listen-recorder">
+                        <div class="recorder"></div>
+                        <div class="recorder-disc"></div>
+                    </div>
+                    <div class="listen-player"></div>
+                </div>
+                <div class="listen-vinyllist"></div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
