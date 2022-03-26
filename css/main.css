@@ -68,6 +68,7 @@ nav {
     position: fixed;
     background-color: #ba3715;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    z-index: 99;
 }
 
 .nav-container {
@@ -181,7 +182,7 @@ header  {
 /* 無限輪播動畫 */
 .header-title{
     width: 100%;
-    height: 375px;
+    height: 37.5rem;
     border-top: .6rem solid white;
     border-bottom: .6rem solid white;
     display: flex;
@@ -203,14 +204,14 @@ header  {
 /* 黑膠唱片動畫 */
 .vinyl{
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 28rem;
+    height: 28rem;
 }
 
 .header-vinyl.vinyl{
     position: absolute;
-    top: calc(50% - 140px);
-    left: calc(50% - 140px);
+    top: calc(50% - 14rem);
+    left: calc(50% - 14rem);
 }
 
 .vinyl-disc-move{
@@ -277,7 +278,7 @@ header  {
 
 .listen-recorder{
     outline: 4px greenyellow solid;
-    width: 280px;
-    height: 280px;
+    width: 28rem;
+    height: 28rem;
     position: relative;
 }
