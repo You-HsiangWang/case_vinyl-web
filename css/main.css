@@ -2,7 +2,7 @@
 /* ----手機版 模組化 -------*/
 html{
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: normal;
     color: #ffffff;
 }
@@ -182,7 +182,7 @@ header  {
 /* 無限輪播動畫 */
 .header-title{
     width: 100%;
-    height: 37.5rem;
+    height: 34rem;
     border-top: .6rem solid white;
     border-bottom: .6rem solid white;
     display: flex;
@@ -204,21 +204,20 @@ header  {
 /* 黑膠唱片動畫 */
 .vinyl{
     position: relative;
-    width: 28rem;
-    height: 28rem;
+    width: 24rem;
+    height: 24rem;
 }
 
 .header-vinyl.vinyl{
     position: absolute;
-    top: calc(50% - 14rem);
-    left: calc(50% - 14rem);
+    top: calc(50% - 12rem);
+    left: calc(50% - 12rem);
 }
 
-.vinyl-disc-move{
+.header-vinyl-disc-move{
     position: absolute;
     width: 100%;
     height: 100%;
-    /* transform: translateX(50px); */
 }
 
 .vinyl-disc{
@@ -276,9 +275,159 @@ header  {
     justify-content: space-evenly;
 }
 
+/* 黑膠唱機 */
 .listen-recorder{
-    outline: 4px greenyellow solid;
+    /* outline: 4px greenyellow solid; */
     width: 28rem;
     height: 28rem;
     position: relative;
+    margin-bottom: 20px;
+}
+
+.recorder{
+    width: 100%;
+    height: 100%;
+    background-image: url(../svg/vinyl-recorder.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.recorder-vinyl-disc-move{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.recorder-disc{
+    position: absolute;
+    top: calc(50% - 28%);
+    left: calc(50% - 28%);
+    width: 56%;
+    height: 56%;
+}
+
+.recorder-arm  {
+    /* outline: 1px greenyellow solid; */
+    position: absolute;
+    top: 19%;
+    right: 19%;
+    width: 25%;
+    height: 50%;
+    background-image: url(../svg/arm.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-origin: 85% 8%;
+    transform: rotate(-15deg);
+}
+
+/* 撥放器 */
+.listen-player{
+    /* outline: 4px greenyellow solid; */
+    width: 100%;
+    max-width: 420px;
+    height: 60px;
+    padding: 0 30px;
+}
+
+.listen-player-row{
+    height: calc(100% - 4px);
+    justify-content: space-between;
+}
+
+.player-col-l{
+    width: 60%;
+    height: 100%;
+    display: flex;
+}
+
+.player-pic-wrap{
+    height: 100%;
+}
+
+.player-pic-wrap img{
+    height: 100%;
+}
+
+.player-title{
+    width: auto;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.player-title h4, .player-title p{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.player-col-r{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-play i{
+    font-size: 30px;
+}
+
+.player-volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-volume i{
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.volume-line{
+    width: 40px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.player-timeline{
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* CONTACT SECTION 手機版 */
+.contactsection-container{
+    padding-top: 60px;
+}
+
+.threedcol{
+    width: 100%;
+    overflow: hidden;
+}
+/* go 3d css */
+
+.info   {
+    width: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info h5{
+    line-height: 2;
 }
