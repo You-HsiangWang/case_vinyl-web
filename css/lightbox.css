@@ -535,3 +535,370 @@ footer{
 .to-top i{
     font-size: 20px;
 }
+
+/* ----------------------------------------------------------------------------------------- */
+/* 電腦版 >= 768px */
+@media screen and (min-width: 768px) {
+    /* ----電腦版 模組化 -------*/
+    html{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    body    {
+        background-color: #ba3715;
+    }
+
+    /* *{
+        outline: 1px greenyellow solid;
+    } */
+
+    /* 字體大小 */
+    a   {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
+
+    h4{
+        font-size: 1.4rem;
+    }
+
+    h5{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    /* 排列顯示 */
+    .max-width-limited{
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .container  {
+        padding: 0px 40px;
+    }
+
+    .display-n{
+        display: none;
+    }
+
+    /* NAV web------------------------------------------------------------- */
+    nav{
+        background-color: #ba3715;
+        background-color: transparent;
+    }
+
+    .nav-container {
+        /* height: 100%; */
+        padding: 10px 40px;
+        position: relative;
+    }
+
+    .nav-col-logo   {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo{
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .nav-col-menu  {
+        display: none;
+    }
+
+    .web-nav-col-l, .web-nav-col-r{
+        display: flex;
+    }
+
+    .web-nav-col-l h3{
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+    .web-nav-col-r i {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    /* 跳出選單頁面 */
+    .menusection{
+        display: none;
+    }
+
+    /* LIGHTBOX-ITEM 電腦版 */
+    .lightbox-item{
+        display: none;
+    }
+
+    .web-lightbox-item{
+        width: 100%;
+        height: calc(100vh - 160px);
+        min-height: 680px;
+        overflow: hidden;
+        position: absolute;
+        top: 80px;
+    }
+
+    .web-lightbox-item-container{
+        height: 100%;
+        padding: 0 40px;
+        max-width: 1140px;
+        margin: auto;
+        background-color: #ba3715;
+    }
+
+    .web-lightbox-item-row{
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* 左lightbox 電腦版 */
+    .web-lightbox-item-col-l{
+        width: 60%;
+        height: 100%;
+        padding: 10px 10px 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* item-pic 電腦版 */
+    .lightbox-item-pic-wrap{
+        padding-bottom: 75%;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0);
+        max-width: 400px;
+    }
+
+    .lightbox-item-pic-train{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    .lightbox-item-pic{
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+    }
+
+    .lightbox-item-sliderdots-wrap{
+        width: 100%;
+        padding: 0;
+        max-width: 450px;
+    }
+
+    .lightbox-item-sliderdots-row{
+        width: 100%;
+        padding: 0;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .lightbox-item-sliderdots-col{
+        width: 18%;
+        padding-bottom: 18%;
+        height: auto;
+        margin: 0;
+    }
+
+    .lightbox-item-sliderdots-col:nth-child(1){
+        background-image: url(../img/cover1-kana.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .lightbox-item-sliderdots-col:nth-child(2){
+        background-image: url(../img/cover2-asian.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .lightbox-item-sliderdots-col:nth-child(3){
+        background-image: url(../img/cover3-radio.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .lightbox-item-sliderdots-col:nth-child(4){
+        background-image: url(../img/Vinyl-disc.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .lightbox-item-sliderdots-col:nth-child(5){
+        background-image: url(../img/band1-kana.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    .lightbox-item-sliderdots-off{
+        display: none;
+    }
+    
+    .lightbox-item-sliderdots-on{
+        display: none;
+    }
+
+    /* track-list 電腦版 */
+    .lightbox-tracklist-wrap{
+        padding: 0;
+        width: 100%;
+        display: inherit;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .lightbox-tracklist-row{
+        width: 100%;
+        justify-content: space-between;
+    }    
+
+    .lightbox-tracklist-wrap::-webkit-scrollbar{
+        display: none;
+    }
+
+    /* 右lightbox 電腦版 */
+    .web-lightbox-item-col-r{
+        width: 40%;
+        height: 100%;
+        padding: 10px 0px 10px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .lightbox-item-title{
+        width: 100%;
+        height: 25%;
+        padding: 0px;
+        line-height: 2;
+    }
+
+    .lightbox-item-title h4{
+        font-size: 3rem;
+    }
+
+    .lightbox-item-title p{
+        font-size: 1.2rem;
+    }
+
+    .lightbox-item-price{
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .lightbox-item-price h3{
+        padding: 10px 0;
+    }
+
+    .web-lightbox-item-addtocart{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .quantity{
+        width: 35%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .quantity h3{
+        font-size: 24px;
+    }
+
+    .web-addtocart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #6ba09e;
+        padding: 15px 10px;
+    }
+
+    .web-addtocart i{
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+    .lightbox-productdetail-wrap{
+        display: block;
+        padding: 0;
+        margin-bottom: 0;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .lightbox-productdetail-wrap::-webkit-scrollbar{
+        display: none;
+    }
+
+    /* lightbox-musicplay 電腦版 */
+    .lightbox-musicplayer{
+        display: none;
+        
+    }
+
+    /* FOOTER 電腦版------------------------------------------------ */
+    footer{
+        display: none;
+    }
+
+    .footer-container {
+        height: 100%;
+        width: 100%;
+        padding: 0 40px;
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .footer-col-l{
+        line-height: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer-col-l p{
+        font-size: 10px;
+        margin-right: 20px;
+    }
+
+    .footer-col-r h5{
+        margin-right: 30px;
+    }
+}
