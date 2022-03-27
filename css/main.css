@@ -303,10 +303,11 @@ header  {
 
 .recorder-disc{
     position: absolute;
+    width: 54%;
+    height: 54%;
     top: calc(50% - 28%);
-    left: calc(50% - 28%);
-    width: 56%;
-    height: 56%;
+    left: calc(50% - 27%);
+
 }
 
 .recorder-arm  {
@@ -423,6 +424,7 @@ header  {
     backdrop-filter: blur(5px);
     transform: translate(-100%);
     transition: .5s;
+    z-index: 97;
 }
 
 .listen-vinyllist:hover{
@@ -448,8 +450,14 @@ header  {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    overflow: scroll;
+    overflow: auto;
     padding-top: 20px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.list-train::-webkit-scrollbar{
+    display: none;
 }
 
 .list-train-vinyl{
@@ -467,6 +475,7 @@ header  {
 .threedcol{
     width: 100%;
     overflow: hidden;
+    transform: scale(1);
 }
 /* go 3d css */
 
@@ -528,4 +537,466 @@ footer{
 
 .to-top i{
     font-size: 20px;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+/* 電腦版 >= 768px */
+@media screen and (min-width: 768px) {
+    /* ----電腦版 模組化 -------*/
+    html{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    body    {
+        background-color: #ba3715;
+    }
+
+    /* *{
+        outline: 1px greenyellow solid;
+    } */
+
+    /* 字體大小 */
+    a   {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
+
+    h4{
+        font-size: 1.4rem;
+    }
+
+    h5{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    /* 排列顯示 */
+    .max-width-limited{
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .container  {
+        padding: 0px 40px;
+    }
+
+    .display-n{
+        display: none;
+    }
+
+    /* NAV web------------------------------------------------------------- */
+    nav{
+        background-color: #ba3715;
+    }
+
+    .nav-container {
+        /* height: 100%; */
+        padding: 10px 40px;
+        position: relative;
+    }
+
+    .nav-col-logo   {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo{
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .nav-col-menu  {
+        display: none;
+    }
+
+    .web-nav-col-l, .web-nav-col-r{
+        display: flex;
+    }
+
+    .web-nav-col-l h3{
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+    .web-nav-col-r i {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    /* 跳出選單頁面 */
+    .menusection{
+        display: none;
+    }
+
+    /* WEB LANDING PAGE SILDER */
+    .web-landing-slider{
+        /* outline: 1px greenyellow solid; */
+        position: absolute;
+        width: 60px;
+        height: calc(100vh - 80px);
+        top: 80px;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .web-landing-slider-dot{
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 20px 0;
+        transition: .5s;
+    }
+
+    .web-landing-slider-dot:first-child{
+        transform: scale(1.5);
+        background-color: #fff;
+    }
+
+    /* HEADER 電腦版 ----------------------------------------------------------*/
+    header  {
+        width: 100%;
+        height: 100vh;
+        padding-top: 0px;
+        background-image: url(../img/band1-kana.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* transition: 1s; */
+    }
+
+    .header-container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 120px 40px 40px 40px;
+        backdrop-filter: blur(10px) grayscale(1) brightness(60%);
+    }
+
+    .web-header-row{
+        max-width: 1060px;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .web-header-col-l{
+        /* outline: 1px greenyellow solid; */
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .web-header-artist{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .web-artist-pic{
+        /* outline: 1px solid greenyellow; */
+        width: 5rem;
+        height: 5rem;
+        margin-right: 16px;
+        background-image: url(../img/band1-kana.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .web-artist-name{
+        line-height: 1.2;
+    }
+
+    .web-artist-name h4{
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .web-header-col-r{
+        /* outline: 1px solid greenyellow; */
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 4rem;
+        position: relative;
+    }
+
+    .h2border{
+        border: 4px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 64px;
+        padding: 10px 5px;
+    }
+
+    .web-header-col-r h2{
+        font-size: 3.5rem;
+    }
+    .web-header-col-r h3{
+        line-height: 1.5;
+    }
+
+    .web-header-col-r-swipe-down{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .web-header-col-r-swipe-down i{
+        font-size: 80px;
+    }
+
+    /* 無限輪播動畫 */
+    .header-title{
+        display: none;
+    }
+
+    /* 黑膠唱片動畫 */
+    .vinyl{
+        position: relative;
+        width: 24rem;
+        height: 24rem;
+    }
+
+    .header-vinyl.vinyl{
+        display: none;
+    }
+
+    .header-vinyl-disc-move{
+        /* position: absolute;
+        width: 100%;
+        height: 100%; */
+        transform: translateX(0%);
+    }
+
+    /* .vinyl-disc{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url(../svg/vinyl.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .vinyl-mask{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35%;
+        height: 35%;
+        background: url(../img/cover1-kana.jpeg) no-repeat center / cover;
+        -webkit-mask: url(../svg/vinyl-mask.svg);
+        mask: url(../svg/vinyl-mask.svg) no-repeat center center / auto;
+    } */
+
+    .vinyl-cover{
+        /* position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/cover1-kana.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; */
+    }
+
+    
+    /* LISTEN SECTION 電腦版 ---------------------------------------------------------------*/
+    .listensection{
+        width: 100%;
+        height: 100vh;
+    }
+
+    .listensection-container{
+        width: 100%;
+        height: 100%;
+        padding: 120px 40px 40px 40px;
+        position: relative;
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .listensection-row{
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .listen-section-col{
+        /* outline: 1px solid greenyellow; */
+        width: 60%;
+        height: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 黑膠唱機 */
+    .listen-recorder{
+        width: 30rem;
+        height: 30rem;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .listen-vinyllist{
+        /* outline: 1px greenyellow solid; */
+        position: static;
+        width: 40%;
+        height: 100%;
+        background-color: transparent;
+        backdrop-filter: blur(0px);
+        transform: translate(0%);
+        transition: none;
+        z-index: 0;
+    }
+
+    .listen-vinyllist:hover{
+        transform: translate(0%);
+    }
+
+    .list-toggle{
+        display: none;
+    }
+
+    .list-train {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        overflow: auto;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        padding-top: 0px;
+    }
+
+    .list-train::-webkit-scrollbar{
+        display: none;
+    }
+
+    .list-train-vinyl{
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 0px;
+        margin: 20px;
+        flex-shrink: 0;
+    }
+
+
+    /* CONTACT SECTION 電腦版-------------------------------------------------------------- */
+    .contactsection{ 
+        width: 100%;
+        height: calc(100vh - 80px);
+    }
+
+    .contactsection-container{
+        height: 100%;
+        padding: 120px 40px 40px 40px;
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .contactsection-row{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .threedcol{
+        width: 100%;
+        flex-grow: 1;
+        overflow: hidden;
+        transform: scale(1.5);
+    }
+    /* go 3d css */
+    
+    .info   {
+        width: 40%;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-left: 60%;
+    }
+    
+    .info h5{
+        line-height: 2;
+        font-size: 1rem;
+    }
+
+    /* FOOTER 電腦版 */
+    .footer-container {
+        height: 100%;
+        width: 100%;
+        padding: 0 40px;
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .footer-col-l{
+        line-height: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer-col-l p{
+        font-size: 10px;
+        margin-right: 20px;
+    }
+
+    .footer-col-r h5{
+        margin-right: 30px;
+    }
 }

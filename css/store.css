@@ -442,3 +442,316 @@ footer{
 .to-top i{
     font-size: 20px;
 }
+
+
+
+/* ----------------------------------------------------------------------------------------- */
+/* 電腦版 >= 768px */
+@media screen and (min-width: 768px) {
+    /* ----電腦版 模組化 -------*/
+    html{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    body    {
+        background-color: #ba3715;
+    }
+
+    /* *{
+        outline: 1px greenyellow solid;
+    } */
+
+    /* 字體大小 */
+    a   {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
+
+    h4{
+        font-size: 1.4rem;
+    }
+
+    h5{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    /* 排列顯示 */
+    .max-width-limited{
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .container  {
+        padding: 0px 40px;
+    }
+
+    .display-n{
+        display: none;
+    }
+
+    /* NAV web------------------------------------------------------------- */
+    nav{
+        background-color: #ba3715;
+    }
+
+    .nav-container {
+        /* height: 100%; */
+        padding: 10px 40px;
+        position: relative;
+    }
+
+    .nav-col-logo   {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo{
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    .nav-col-menu  {
+        display: none;
+    }
+
+    .web-nav-col-l, .web-nav-col-r{
+        display: flex;
+    }
+
+    .web-nav-col-l h3{
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+    .web-nav-col-r i {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    /* 跳出選單頁面 */
+    .menusection{
+        display: none;
+    }
+
+    /* HEADER 電腦版------------------------------------------------------ */
+    header  {
+        width: 100%;
+        padding-top: 80px;
+    }
+
+    .header-container{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* 無限輪播動畫 */
+    .header-bg{
+        width: 100%;
+        height: 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../img/band3-asian.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(5px);
+        position: absolute;
+        z-index: -1;
+    }
+
+    .header-wrap{
+        outline: 1px solid greenyellow;
+        width: 100%;
+        height: 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        max-width: 1140px;
+        margin: auto;
+        padding: 0 100px;
+    }
+
+    .header-train{
+        width: 300%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-shrink: 0;
+    }
+
+    .artist-slider{
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .artist-card{
+        width: 85%;
+        height: 20rem;
+        background-color: #df1624;
+        display: flex;
+    }
+
+    .artist-name{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        text-align: right;
+        padding: 10px 20px;
+    }
+
+    .artist-pic{
+        width: 60%;
+        height: 100%;
+        background-image: url(../img/band3-asian.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+
+    
+    /* SHOP SECTION 電腦版本 --------------------------------------------*/
+    .shop-container{
+        margin-bottom: 0px;
+        max-width: 1140px;
+        margin: auto auto 40px auto;
+    }
+
+    .shop-col-l .shop-btn:nth-child(3) p, .shop-col-l .shop-btn:nth-child(3) i{
+        display: none;
+    }
+
+    .shop-col-r .shop-btn:nth-child(1) p, .shop-col-r .shop-btn:nth-child(1) i{
+        display: block;
+    }
+
+    .shop-col-r .shop-btn:nth-child(1) p{
+        margin-right: 60px;
+    }
+
+    .shop-col-l::before{
+        content:'Filter:';
+        display: block;
+        font-size: 16px;
+    }
+
+    .shop-col-r::before{
+        content:'Sort By:';
+        display: block;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    /* shop-items */
+    .shop-items{
+        width: 100%;
+    }
+
+    .shop-item-row{
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 -1%;
+    }
+
+    .shop-item-col{
+        flex-shrink: 0;
+        padding-bottom: 20px;
+        width: 23%;
+        margin: 0 1%;
+    }
+
+    .shop-item-card{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+/* 為何這邊的padding bottom會吃到高度 */
+    .shop-item-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 700px;
+        perspective-origin: 30% 50%;
+        transition: .5s;
+        position: relative;
+    }
+
+    .shop-item-pic{
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        top: calc(50% - 30%);
+        left: calc( 50% - 
+        30%);
+        background-color: #000000;
+        transform-origin: center center;
+        transform-style: preserve-3d;
+        transform:rotateX(60deg) rotateZ(33deg);
+        box-shadow: rgba(0,0,0,1)2px 2px 1px, rgba(0, 0, 0, 0.7) 4px 4px 8px;
+        transition: .5s;
+    }
+
+    /* FOOTER 電腦版------------------------------------------------ */
+    .footer-container {
+        height: 100%;
+        width: 100%;
+        padding: 0 40px;
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .footer-col-l{
+        line-height: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer-col-l p{
+        font-size: 10px;
+        margin-right: 20px;
+    }
+
+    .footer-col-r h5{
+        margin-right: 30px;
+    }
+}
