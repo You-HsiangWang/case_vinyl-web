@@ -13,6 +13,7 @@
     position: relative;
     transform: rotateY(0deg);
     animation: spin 10s infinite;
+    animation-timing-function: linear;
 }
 
 @keyframes spin {
@@ -108,5 +109,6 @@
         position: relative;
         transform: rotateY(0deg);
         animation: spin 10s infinite;
+        animation-timing-function: linear;
     }
 }

@@ -6,6 +6,7 @@ html{
     font-weight: normal;
     color: #ffffff;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body    {
@@ -202,6 +203,71 @@ header  {
     flex-grow: 0;
 }
 
+.header-slider1{
+    animation-name: runninghorse1;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.header-slider2{
+    animation-name: runninghorse2;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes runninghorse1 {
+    0%{
+        transform: translateX(0%);
+    }
+
+    48%{
+        /* transform: translateX(-100%); */
+        opacity: 1;
+    }
+    49%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    51%{
+        /* transform: translateX(100%); */
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes runninghorse2 {
+    0%{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    1%{
+        /* transform: translateX(0%); */
+        opacity: 1;
+    }
+
+    49%{
+        transform: translateX(-100%);
+    }
+
+    99%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+}
+
+
 /* 黑膠唱片動畫 */
 .vinyl{
     position: relative;
@@ -215,10 +281,12 @@ header  {
     left: calc(50% - 12rem);
 }
 
-.header-vinyl-disc-move{
+header .header-vinyl-disc-move{
     position: absolute;
     width: 100%;
     height: 100%;
+    transition: 1.5s;
+    z-index: 1;
 }
 
 .vinyl-disc{
@@ -251,6 +319,7 @@ header  {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 2;
 }
 
 /* LISTEN SECTION 手機版 */
@@ -633,6 +702,7 @@ footer{
     nav{
         background-color: #ba3715;
         background-color: transparent;
+        transition: .5s;
     }
 
     .nav-container {
@@ -690,6 +760,17 @@ footer{
         align-items: center;
     }
 
+    .web-landing-slider a{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .web-landing-slider a:hover .web-landing-slider-dot{
+        transform: scale(2);
+    }
+
     .web-landing-slider-dot{
         width: 6px;
         height: 6px;
@@ -699,10 +780,15 @@ footer{
         transition: .5s;
     }
 
-    .web-landing-slider-dot:first-child{
+    .web-landing-slider-dot.dot-on{
         transform: scale(1.5);
         background-color: #fff;
     }
+
+    /* .web-landing-slider-dot:first-child{
+        transform: scale(1.5);
+        background-color: #fff;
+    } */
 
     /* HEADER 電腦版 ----------------------------------------------------------*/
     header  {
@@ -725,7 +811,7 @@ footer{
     }
 
     .web-header-row{
-        max-width: 1360px;
+        max-width: 1280px;
         margin: auto;
         width: 100%;
         height: 100%;
@@ -806,8 +892,13 @@ footer{
         color: rgba(255, 255, 255, 0.5);
     }
 
+    .web-header-col-r-swipe-down:hover a{
+        color: #fff;
+    }
+
     .web-header-col-r-swipe-down a{
         color: rgba(255, 255, 255, 0.5);
+        transition: .5s;
     }
 
     .web-header-col-r-swipe-down i{
@@ -830,11 +921,17 @@ footer{
         display: none;
     }
 
-    .header-vinyl-disc-move{
+    .web-header-vinyl{
+        flex-shrink: 0;
+    }
+
+    header .header-vinyl-disc-move{
         /* position: absolute;
         width: 100%;
         height: 100%; */
-        transform: translateX(0%);
+        /* transform: translateX(50vw) rotate(360deg); */
+        transition: 1.5s;
+        z-index: 1;
     }
 
     /* .vinyl-disc{
@@ -867,6 +964,7 @@ footer{
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover; */
+        z-index: 2;
     }
 
     

@@ -87,13 +87,13 @@
                     </div>
                 </div>
                 <div class="web-landing-slider display-n">
-                    <a href="#header">
+                    <a href="#header" id="dot-page1">
                         <div class="web-landing-slider-dot"></div>
                     </a>
-                    <a href="#listensection">
+                    <a href="#listensection" id="dot-page2">
                         <div class="web-landing-slider-dot"></div>
                     </a>
-                    <a href="#contact">
+                    <a href="#contact" id="dot-page3">
                         <div class="web-landing-slider-dot"></div>
                     </a>
 
@@ -106,42 +106,42 @@
         <div class="header-container">
             <div class="header-title">
                 <div class="header-train">
-                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
-                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider1">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider2">WE VINYL PLACE FOR MUSIC LOVERS</h2>
                 </div>
                 <div class="header-train">
-                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
-                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider1">VINYL PLACE FOR MUSIC LOVERS WE</h2>
+                    <h2 class="header-slogan header-slider2">VINYL PLACE FOR MUSIC LOVERS WE</h2>
                 </div>
                 <div class="header-train">
-                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
-                    <h2 class="header-slogan header-slider">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                    <h2 class="header-slogan header-slider1">PLACE FOR MUSIC LOVERS WE VINYL</h2>
+                    <h2 class="header-slogan header-slider2">PLACE FOR MUSIC LOVERS WE VINYL</h2>
                 </div>
             </div>
             <div class="header-vinyl vinyl">
-                <div class="header-vinyl-disc-move">
+                <div class="header-vinyl-disc-move phonejq-rolling2">
                     <div class="vinyl-disc">
                     </div>
-                    <div class="vinyl-mask"></div>
+                    <div class="vinyl-mask alljs-header-bg"></div>
                 </div>
-                <div class="vinyl-cover"></div>
+                <div class="vinyl-cover alljs-header-bg phonejq-rolling1"></div>
             </div>
             <div class="web-header-row display-n">
                 <div class="web-header-col-l">
                     <div class="web-header-vinyl vinyl">
-                        <div class="header-vinyl-disc-move">
+                        <div class="header-vinyl-disc-move webjq-rolling2">
                             <div class="vinyl-disc">
                             </div>
-                            <div class="vinyl-mask"></div>
+                            <div class="vinyl-mask alljs-header-bg"></div>
                         </div>
-                        <div class="vinyl-cover"></div>
+                        <div class="vinyl-cover alljs-header-bg webjq-rolling1"></div>
                         <!-- <div class="vinyl-tag"></div> -->
                     </div>
                     <div class="web-header-artist">
-                        <div class="web-artist-pic"></div>
+                        <div class="web-artist-pic webjq-header-bg"></div>
                         <div class="web-artist-name">
-                            <h3>Time</h3>
-                            <h4>KANA-BOON</h4>
+                            <h3 class="webjq-header-album">TIME</h3>
+                            <h4 class="webjq-header-artist">KANA-BOON</h4>
                         </div>
                     </div>
                 </div>
@@ -369,11 +369,46 @@
     <!-- <script src="../case_vinyl-web/jq/weblandingpagejq.js"></script> -->
 
     <script>
-        // 輪播牆時間
+        // RWD=========================================================================
+        // function rwdClass(div, addclass){
+        //     if ($(window).width() >= 768){
+        //         $(div).addClass(addclass);
+        //     }
+
+        //     else{
+        //         $(div).removeClass(addclass);
+        //     }
+        // }
+
+        // $(window).resize(rwdClass());
+
+        // 輪播牆時間======================================================
+        artistnameArray = ['Radiohead', 'KANA-BOON', '東京事変', 'Asian Kung-Fu Generation']
+        albumnameArray = ['OK Computer', 'TIME', '大発見', 'ソルファ']
+
+        if ($(window).width() >= 768) {
+            $('header').addClass('webjq-header-bg');
+        }
+
+        else {
+            $('header').removeClass('webjq-header-bg');
+        }
+
+        $(window).resize(function () {
+            if ($(window).width() >= 768) {
+                $('header').css('background-image', 'url(./img/band0.jpeg)');
+                $('header').addClass('webjq-header-bg');
+            }
+
+            else {
+                $('header').removeClass('webjq-header-bg');
+                $('header').css('background-image', 'none');
+            }
+        });
 
         let picIndex = 0;
 
-        function pagemoveright(){
+        function headerDataChange() {
             if (picIndex > 2) {
                 picIndex = 0;
             }
@@ -381,29 +416,119 @@
                 picIndex++;
             }
             console.log('index', picIndex);
-            $('header').css('background-image',`url(./img/band${picIndex}.jpeg)`);
-            $('header').css('transition','1s');
+            $('.webjq-header-bg').css('background-image', `url(./img/band${picIndex}.jpeg)`);
+            $('.webjq-header-bg').css('transition', '1s');
+            $('.alljs-header-bg').css('background-image', `url(./img/cover${picIndex}.jpeg)`);
+            $('.alljs-header-bg').css('transition', '1s');
+            $('.webjq-header-album').text(albumnameArray[picIndex]);
+            $('.webjq-header-artist').text(artistnameArray[picIndex]);
         }
 
         let idIntervalOne = null;
 
         function startInterval() {
-            idIntervalOne = setInterval(pagemoveright, 4000);
+            idIntervalOne = setInterval(headerDataChange, 4000);
         }
 
         startInterval();
-// ===========================================================
-        // let idIntervalOne = null;
+        // ===========================================================================
+        // sliderdots判斷
+        // $(window).scroll(function () {
+        //     console.log('st', $(this).scrollTop());
+        //     console.log('wh', $(this).height());
+        //     console.log('dh', dotHeight);
+        // })
 
-        // function startInterval() {
-        //     idIntervalOne = setInterval(pagemoveright, 2000);
-        // }
+        let dotHeight = 0;
+        dotHeight = $(window).height() * 2;
 
-        // startInterval();
+        $(window).resize(function () {
+            dotHeight = $(window).height() * 2;
+            // console.log('dh', dotHeight);
+        })
 
-        
+        function whichPage() {
+            if ($(window).scrollTop() < dotHeight * 0.5 || $(window).scrollTop() == 0) {
+                $('#dot-page1').children('.web-landing-slider-dot').addClass('dot-on');
+                $('#dot-page1').siblings().children('.web-landing-slider-dot').removeClass('dot-on');
+            }
+            if ($(window).scrollTop() >= dotHeight * 0.5 && $(window).scrollTop() < dotHeight) {
+                $('#dot-page2').children('.web-landing-slider-dot').addClass('dot-on');
+                $('#dot-page2').siblings().children('.web-landing-slider-dot').removeClass('dot-on');
+            }
+            if ($(window).scrollTop() == dotHeight && $(window).scrollTop() > 0) {
+                $('#dot-page3').children('.web-landing-slider-dot').addClass('dot-on');
+                $('#dot-page3').siblings().children('.web-landing-slider-dot').removeClass('dot-on');
+            }
+        }
+        whichPage();
+        $(window).scroll(whichPage);
+        // ================================================================================================================
+        // nav顏色
+        function navColor() {
+            if ($(window).scrollTop() >= 0 && $(window).width() >= 768) {
+                $('nav').css('background-color', 'transparent');
+            }
 
-        // console.log('index',picIndex);
+            if ($(window).scrollTop() >= 10 && $(window).width() >= 768 && $(window).scrollTop() < dotHeight * 0.5 - 80) {
+                $('nav').css('background-color', '#1f2327');
+            }
+            if ($(window).scrollTop() >= dotHeight * 0.5 - 80 || $(window).width() < 768) {
+                $('nav').css('background-color', '#ba3715');
+            }
+        }
+        navColor();
+        $(window).scroll(navColor);
+        $(window).resize(navColor);
+        // ====================================================================================
+        // 唱片hover 電腦版
+        $('.vinyl-cover.webjq-rolling1').mouseenter(function () {
+            $(this).prev('.header-vinyl-disc-move').css('transform', 'translateX(45%) rotate(110deg)');
+        })
+        $('.vinyl-cover.webjq-rolling1').mouseleave(function () {
+            $(this).prev('.header-vinyl-disc-move').css('transform', 'translateX(0%) rotate(0deg)');
+        })
+
+        // 唱片滑出去轉場 電腦版
+        let rollingTrigger = 0;
+        rollingTrigger = $(window).height();
+        $(window).resize(function () {
+            rollingTrigger = $(window).height();
+            // console.log('dh', dotHeight);
+        });
+
+        let scrollTrigger = 0;
+        scrollTrigger = $(window).scrollTop();
+        $(window).resize(function () {
+            scrollTrigger = $(window).scrollTop();
+            // console.log('dh', dotHeight);
+        });
+        $(window).scroll(function () {
+            scrollTrigger = $(window).scrollTop();
+        });
+
+        let trigger = 0;
+        $(window).scroll(function () {
+            console.log(scrollTrigger / rollingTrigger * 100);
+            trigger = scrollTrigger / rollingTrigger * 100;
+
+            $('.webjq-rolling2').css('transform', `translateX(${trigger * 2}vw) rotate(${trigger * 20}deg)`);
+
+        });
+        // --------------------------
+        // 唱片滑出去轉場 手機版
+        $(window).scroll(function () {
+            console.log(scrollTrigger / rollingTrigger * 100);
+            trigger = scrollTrigger / rollingTrigger * 100;
+
+            $('.phonejq-rolling2').css('transform', `translateX(${trigger * 2}vw) rotate(${trigger * 20}deg)`);
+            $('.phonejq-rolling1').css('transform', `translateX(-${trigger * 2}vw) rotate(${trigger * 0}deg)`);
+
+        });
+
+        // 文字跑馬燈 手機版本
+        // $('.header-slider1').css('transform','translateX(-100%)')
+
 
     </script>
 
