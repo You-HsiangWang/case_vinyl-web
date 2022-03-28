@@ -17,9 +17,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/3dcss.css">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -28,14 +25,20 @@
             <div class="row nav-row">
                 <div class="nav-col-logo">
                     <div class="nav-logo">
-                        <img src="./img/logo.png" alt="">
+                        <a href="./index.html#header">
+                            <img src="./img/logo.png" alt="">
+                        </a>
                     </div>
                     <div class="web-nav-col-l display-n">
                         <h3 class="menu-btn-link">
-                            Store
+                            <a href="./store.html" target="_blank">
+                                Store
+                            </a>
                         </h3>
                         <h3 class="menu-btn-link">
-                            Contact
+                            <a href="./index.html#contact">
+                                Contact
+                            </a>
                         </h3>
                     </div>
                 </div>
@@ -84,16 +87,22 @@
                     </div>
                 </div>
                 <div class="web-landing-slider display-n">
-                    <div class="web-landing-slider-dot"></div>
-                    <div class="web-landing-slider-dot"></div>
-                    <div class="web-landing-slider-dot"></div>
+                    <a href="#header">
+                        <div class="web-landing-slider-dot"></div>
+                    </a>
+                    <a href="#listensection">
+                        <div class="web-landing-slider-dot"></div>
+                    </a>
+                    <a href="#contact">
+                        <div class="web-landing-slider-dot"></div>
+                    </a>
+
                 </div>
 
             </div>
         </div>
     </nav>
-
-    <header>
+    <header id="header">
         <div class="header-container">
             <div class="header-title">
                 <div class="header-train">
@@ -144,15 +153,17 @@
                         PLACE FOR <br> VINYL <br>LOVERS
                     </h3>
                     <div class="web-header-col-r-swipe-down">
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <p>Swipe Down</p>
+                        <a href="#listensection">
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <p>Swipe Down</p>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="listensection">
+    <div class="listensection" id="listensection">
         <div class="listensection-container container">
             <div class="listensection-row row">
                 <div class="listen-section-col">
@@ -257,7 +268,7 @@
         </div>
     </div>
 
-    <div class="contactsection">
+    <div class="contactsection" id="contact">
         <div class="contactsection-container container">
             <div class="contactsection-row">
                 <div class="threedcol">
@@ -304,7 +315,8 @@
                 </div>
                 <div class="info">
                     <h5>
-                        Address / 2F., No. 16, Ln. 3, Yixin St., Hualien City, Hualien County 970007 , Taiwan (R.O.C.)
+                        Address / 2F., No. 16, Ln. 3, Yixin St., Hualien City, Hualien County 970007 , Taiwan
+                        (R.O.C.)
                     </h5>
                     <h5>
                         Time / 10:00 - 17:00
@@ -335,16 +347,65 @@
                 </div>
                 <div class="footer-col-r">
                     <h5>
-                        To Store
+                        <a href="./store.html" target="_blank">
+                            To Store
+                        </a>
                     </h5>
                     <div class="to-top">
-                        <i class="fa-solid fa-angle-up"></i>
-                        <p>To Top</p>
+                        <a href="./index.html#header">
+                            <i class="fa-solid fa-angle-up"></i>
+                            <p>To Top</p>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+
+    <!-- JQ--------------------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- <script src="../case_vinyl-web/jq/weblandingpagejq.js"></script> -->
+
+    <script>
+        // 輪播牆時間
+
+        let picIndex = 0;
+
+        function pagemoveright(){
+            if (picIndex > 2) {
+                picIndex = 0;
+            }
+            else {
+                picIndex++;
+            }
+            console.log('index', picIndex);
+            $('header').css('background-image',`url(./img/band${picIndex}.jpeg)`);
+            $('header').css('transition','1s');
+        }
+
+        let idIntervalOne = null;
+
+        function startInterval() {
+            idIntervalOne = setInterval(pagemoveright, 4000);
+        }
+
+        startInterval();
+// ===========================================================
+        // let idIntervalOne = null;
+
+        // function startInterval() {
+        //     idIntervalOne = setInterval(pagemoveright, 2000);
+        // }
+
+        // startInterval();
+
+        
+
+        // console.log('index',picIndex);
+
+    </script>
 
 </body>
 

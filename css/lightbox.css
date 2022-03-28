@@ -481,12 +481,15 @@ nav {
     background-color: #6ba09e;
 }
 
+.player-col-cart .player-volume{
+    display: none;    
+}
+
 .player-timeline{
     width: 100%;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
 
 /* FOOTER 手機版*/
 footer{
@@ -588,7 +591,7 @@ footer{
 
     /* 排列顯示 */
     .max-width-limited{
-        max-width: 1140px;
+        max-width: 1360px;
         margin: auto;
     }
 
@@ -603,7 +606,6 @@ footer{
     /* NAV web------------------------------------------------------------- */
     nav{
         background-color: #ba3715;
-        background-color: transparent;
     }
 
     .nav-container {
@@ -621,7 +623,7 @@ footer{
     .nav-logo{
         width: 60px;
         height: 60px;
-        margin-right: 10px;
+        margin-right: 20px;
     }
 
     .nav-col-menu  {
@@ -633,13 +635,13 @@ footer{
     }
 
     .web-nav-col-l h3{
-        margin: 0 10px;
+        margin: 0 20px;
         font-size: 20px;
     }
 
     .web-nav-col-r i {
-        font-size: 20px;
-        margin-left: 10px;
+        font-size: 30px;
+        margin-left: 20px;
     }
 
     /* 跳出選單頁面 */
@@ -653,18 +655,20 @@ footer{
     }
 
     .web-lightbox-item{
+        display: block;
         width: 100%;
-        height: calc(100vh - 160px);
-        min-height: 680px;
-        overflow: hidden;
-        position: absolute;
-        top: 80px;
+        /* height: calc(100vh - 160px);
+        min-height: 680px; */
+        /* overflow: hidden; */
+        position: relative;
+        padding-top: 80px;
+        margin-bottom: 80px;
     }
 
     .web-lightbox-item-container{
         height: 100%;
         padding: 0 40px;
-        max-width: 1140px;
+        max-width: 1360px;
         margin: auto;
         background-color: #ba3715;
     }
@@ -672,15 +676,15 @@ footer{
     .web-lightbox-item-row{
         height: 100%;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     /* 左lightbox 電腦版 */
     .web-lightbox-item-col-l{
         width: 60%;
-        height: 100%;
-        padding: 10px 10px 10px 0;
+        height: auto;
+        padding: 10px 40px 10px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -692,7 +696,7 @@ footer{
         padding-bottom: 75%;
         height: auto;
         background-color: rgba(255, 255, 255, 0);
-        max-width: 400px;
+        /* max-width: 400px; */
     }
 
     .lightbox-item-pic-train{
@@ -710,7 +714,7 @@ footer{
     .lightbox-item-sliderdots-wrap{
         width: 100%;
         padding: 0;
-        max-width: 450px;
+        /* max-width: 450px; */
     }
 
     .lightbox-item-sliderdots-row{
@@ -786,6 +790,10 @@ footer{
         display: none;
     }
 
+    .lightbox-tracklist-col{
+        padding: 30px 0;
+    }
+
     /* 右lightbox 電腦版 */
     .web-lightbox-item-col-r{
         width: 40%;
@@ -795,6 +803,7 @@ footer{
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        overflow: hidden;
     }
 
     .lightbox-item-title{
@@ -867,20 +876,113 @@ footer{
 
     /* lightbox-musicplay 電腦版 */
     .lightbox-musicplayer{
+        display: block;
+        position: fixed;
+        height: 120px;
+    }
+
+    .listen-player-row{
+        height: calc(100%);
+        justify-content: space-between;
+        max-width: 1280px;
+        margin: auto;
+    }
+    
+    .player-col-l{
+        width: auto;
+        height: 100%;
+        display: flex;
+    }
+    
+    .player-title{
+        margin-left: 20px;
+    }
+    
+    .player-title h4, .player-title p{
+        line-height: 1.5;
+    }
+
+    .player-title h4{
+        font-size: 30px;
+    }
+    
+    .player-col-r{
+        width: 40%;
+        flex-direction: column;
+        flex-shrink: 0;
+        justify-content: space-evenly;
+    }
+    
+    .player-play {
+        margin-right: 0px;
+    }
+    
+    .player-play i{
+        font-size: 40px;
+    }
+    
+    .player-volume{
         display: none;
-        
+    }
+
+    .web-player-timeline{
+        /* outline: 1px solid greenyellow; */
+        display: block;
+        width: 100%;
+        height: 4px;
+    }
+    
+    .volume-line{
+        width: 40px;
+        height: 2px;
+        background-color: #fff;
+    }
+    
+    .player-col-cart{
+        /* outline: 1px greenyellow solid; */
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        background-color: transparent;
+    }
+
+    .player-col-cart h4{
+        display: none;
+    }
+
+    .player-col-cart>i{
+        display: block;
+        font-size: 30px;
+        color: #6ba09e;
+    }
+
+    .player-col-cart .web-player-volume{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+    }
+
+    .player-col-cart .web-player-volume i{
+        font-size: 20px;
+    }
+
+    .player-col-cart .web-player-volume .volume-line{
+        width: 80px;
     }
 
     /* FOOTER 電腦版------------------------------------------------ */
     footer{
-        display: none;
+        margin-bottom: 120px;
     }
 
     .footer-container {
         height: 100%;
         width: 100%;
         padding: 0 40px;
-        max-width: 1140px;
+        max-width: 1360px;
         margin: auto;
     }
 

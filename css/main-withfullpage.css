@@ -417,7 +417,7 @@ header  {
     /* outline: 4px greenyellow solid; */
     position: absolute;
     width: 70%;
-    height: 500px;
+    height: 70vh;
     top: 10%;
     left: 0%;
     background-color: rgba(186, 54, 21, 0.5);
@@ -469,11 +469,12 @@ header  {
 
 /* CONTACT SECTION 手機版 */
 .contactsection{
-    
+    width: 100%;
+    height: calc(100vh - 80px);
 }
 
 .contactsection-container{
-    
+    padding-top: 80px;
 }
 
 .threedcol{
@@ -721,11 +722,11 @@ footer{
         width: 100%;
         height: 100%;
         padding: 120px 40px 40px 40px;
-        backdrop-filter: blur(15px) grayscale(1) brightness(60%);
+        backdrop-filter: blur(10px) grayscale(1) brightness(60%);
     }
 
     .web-header-row{
-        max-width: 1360px;
+        max-width: 1280px;
         margin: auto;
         width: 100%;
         height: 100%;
@@ -803,10 +804,6 @@ footer{
         right: 0;
         bottom: 0;
         text-align: center;
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    .web-header-col-r-swipe-down a{
         color: rgba(255, 255, 255, 0.5);
     }
 
