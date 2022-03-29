@@ -111,7 +111,7 @@ nav {
 }
 
 .nav-btn-menu-on{
-
+    transition: 1s;
 }
 
 .nav-btn-menu-on i{
@@ -120,6 +120,7 @@ nav {
 
 /* 跳出選單頁面 */
 .menusection{
+    display: block;
     position: absolute;
     width: 80%;
     height: calc(100vh - 80px);
@@ -129,6 +130,18 @@ nav {
     backdrop-filter: blur(5px) ;
     /* 給動畫用 */
     transform: translateX(100%);
+    transition: 1s;
+}
+
+.close-menusection{
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: calc(100vh - 80px);
+    top: 80px;
+    left: 0%;
+    background-color: transparent;
+    /* 給動畫用 */
 }
 
 .menu-container{
@@ -839,6 +852,10 @@ footer{
 
     /* 跳出選單頁面 */
     .menusection{
+        display: none;
+    }
+
+    .close-menusection{
         display: none;
     }
 

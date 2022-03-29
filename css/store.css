@@ -6,6 +6,7 @@ html{
     font-weight: normal;
     color: #ffffff;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body    {
@@ -119,6 +120,7 @@ nav {
 
 /* 跳出選單頁面 */
 .menusection{
+    display: block;
     position: absolute;
     width: 80%;
     height: calc(100vh - 80px);
@@ -128,6 +130,18 @@ nav {
     backdrop-filter: blur(5px) ;
     /* 給動畫用 */
     transform: translateX(100%);
+    transition: 1s;
+}
+
+.close-menusection{
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: calc(100vh - 80px);
+    top: 80px;
+    left: 0%;
+    background-color: transparent;
+    /* 給動畫用 */
 }
 
 .menu-container{
@@ -187,7 +201,7 @@ header  {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/band3-asian.jpg);
+    background-image: url(../img/band1.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -234,16 +248,27 @@ header  {
     align-items: center;
     margin-left: auto;
     text-align: right;
+    flex-direction: row-reverse;
     padding: 10px 20px;
 }
 
 .artist-pic{
     width: 100%;
     height: 60%;
-    background-image: url(../img/band3-asian.jpg);
+    background-image: url(../img/band3.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.artist-pic0{
+    background-image: url(../img/band0.jpeg);
+}
+.artist-pic1{
+    background-image: url(../img/band1.jpeg);
+}
+.artist-pic2{
+    background-image: url(../img/band2.jpeg);
 }
 
 /* SHOP SECTION 手機版本 */
@@ -298,11 +323,13 @@ header  {
     flex-grow: 0;
     flex-shrink: 0;
     padding-bottom: 20px;
+    
 }
 
 .shop-item-card{
     /* outline: 1px greenyellow solid; */
     width: 150px;
+    
 }
 
 .shop-item-bg{
@@ -370,8 +397,60 @@ header  {
     transition: 1s;
 }
 
+.shop-mask-0{
+    background: url(../img/cover0.jpeg) no-repeat center / cover;
+}
+.shop-cover-0{
+    background: url(../img/cover0.jpeg) no-repeat center / cover;
+}
+.shop-mask-1{
+    background: url(../img/cover1.jpeg) no-repeat center / cover;
+}
+.shop-cover-1{
+    background: url(../img/cover1.jpeg) no-repeat center / cover;
+}
+.shop-mask-2{
+    background: url(../img/cover2.jpeg) no-repeat center / cover;
+}
+.shop-cover-2{
+    background: url(../img/cover2.jpeg) no-repeat center / cover;
+}
+.shop-mask-3{
+    background: url(../img/cover3.jpeg) no-repeat center / cover;
+}
+.shop-cover-3{
+    background: url(../img/cover3.jpeg) no-repeat center / cover;
+}
+.shop-mask-4{
+    background: url(../img/cover4.jpeg) no-repeat center / cover;
+}
+.shop-cover-4{
+    background: url(../img/cover4.jpeg) no-repeat center / cover;
+}
+.shop-mask-5{
+    background: url(../img/cover5.jpeg) no-repeat center / cover;
+}
+.shop-cover-5{
+    background: url(../img/cover5.jpeg) no-repeat center / cover;
+}
+.shop-mask-6{
+    background: url(../img/cover6.jpeg) no-repeat center / cover;
+}
+.shop-cover-6{
+    background: url(../img/cover6.jpeg) no-repeat center / cover;
+}
+
+.shop-item-info{
+    
+}
+
 .shop-item-info p{
     color: rgba(255, 255, 255, 0.7);
+}
+
+.shop-item-info p:nth-child(3)::before{
+    content: '$';
+    margin-right: 4px;
 }
 
 .shop-item-info h4,.shop-item-info p{
@@ -455,6 +534,7 @@ footer{
         font-weight: normal;
         color: #ffffff;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     body    {
@@ -555,6 +635,10 @@ footer{
         display: none;
     }
 
+    .close-menusection{
+        display: none;
+    }
+
     /* HEADER 電腦版------------------------------------------------------ */
     header  {
         width: 100%;
@@ -574,7 +658,7 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url(../img/band3-asian.jpg);
+        background-image: url(../img/band1.jpeg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -632,10 +716,6 @@ footer{
     .artist-pic{
         width: 60%;
         height: 100%;
-        background-image: url(../img/band3-asian.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 
 

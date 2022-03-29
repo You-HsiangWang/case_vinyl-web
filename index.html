@@ -65,10 +65,12 @@
                                             <i class="fa-regular fa-user"></i>
                                         </div>
                                         <h3 class="menu-btn-link">
-                                            Store
+                                            <a href="./store.html">
+                                                Store
+                                            </a>
                                         </h3>
                                         <h3 class="menu-btn-link">
-                                            Contact
+                                            <a href="./index.html#contact">Contact</a>
                                         </h3>
 
                                     </div>
@@ -84,6 +86,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="close-menusection"></div>
                     </div>
                 </div>
                 <div class="web-landing-slider display-n">
@@ -481,6 +484,49 @@
         navColor();
         $(window).scroll(navColor);
         $(window).resize(navColor);
+        //======================================================================================================
+        // nav手機版
+        $('.menusection').css('transition', '1s');
+        $('.menusection').css('transform', 'translateX(100%)');
+        $('.nav-btn-menu-off').removeClass('display-n');
+        $('.nav-btn-menu-on').addClass('display-n');
+
+        $('.nav-btn-menu-off').click(function () {
+            $(this).addClass('display-n');
+            $('.nav-btn-menu-on').removeClass('display-n');
+            $('.menusection').css('transition', '1s');
+            $('.menusection').css('transform', 'translateX(0%)');
+        });
+        $('.nav-btn-menu-on').click(function () {
+            $(this).addClass('display-n');
+            $('.menusection').css('transition', '1s');
+            $('.menusection').css('transform', 'translateX(100%)');
+            $('.nav-btn-menu-off').removeClass('display-n');
+        });
+        $('.close-menusection').click(function () {
+            $('.nav-btn-menu-on').addClass('display-n');
+            $('.menusection').css('transition', '1s');
+            $('.menusection').css('transform', 'translateX(100%)');
+            $('.nav-btn-menu-off').removeClass('display-n');
+        });
+
+        $('.nav-logo').click(function () {
+            if ($('.nav-btn-menu-off').hasClass('display-n')) {
+                $('.nav-btn-menu-on').addClass('display-n');
+                $('.menusection').css('transition', '1s');
+                $('.menusection').css('transform', 'translateX(100%)');
+                $('.nav-btn-menu-off').removeClass('display-n');
+            }
+        })
+        $(window).resize(function () {
+            if ($(window).width() >= 768) {
+                $('.nav-btn-menu-on').addClass('display-n');
+                $('.menusection').css('transition', '1s');
+                $('.menusection').css('transform', 'translateX(100%)');
+                $('.nav-btn-menu-off').removeClass('display-n');
+            }
+        });
+
         // ====================================================================================
         // 唱片hover 電腦版
         $('.vinyl-cover.webjq-rolling1').mouseenter(function () {
@@ -594,7 +640,7 @@
             $('.player-timeline-on').css('animation-duration', `none`);
         });
 
-        $('.player-timeline-on').on('animationend',function(){
+        $('.player-timeline-on').on('animationend', function () {
             $('.recorder-arm').css('transform', 'rotate(-15deg)');
             $('.play-off').addClass('display-n');
             $('.play-on').removeClass('display-n');
