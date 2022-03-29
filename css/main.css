@@ -174,6 +174,7 @@ nav {
 header  {
     width: 100%;
     padding-top: 80px;
+    overflow: hidden;
 }
 
 .header-container{
@@ -320,6 +321,7 @@ header .header-vinyl-disc-move{
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
+    transition: .5s;
 }
 
 /* LISTEN SECTION 手機版 */
@@ -353,6 +355,7 @@ header .header-vinyl-disc-move{
     height: 28rem;
     position: relative;
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .recorder{
@@ -364,19 +367,36 @@ header .header-vinyl-disc-move{
     background-position: center;
 }
 
-.recorder-vinyl-disc-move{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
 .recorder-disc{
     position: absolute;
     width: 54%;
     height: 54%;
     top: calc(50% - 28%);
     left: calc(50% - 27%);
+}
 
+.recorder-vinyl-disc-move{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-name: none;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
+}
+
+@keyframes spinning {
+    0%{
+        transform: rotate(0deg);
+    }    
+    100%{
+        transform: rotate(360deg);
+    }    
+}
+
+.recorder-vinyl-disc-move .vinyl-mask{
+    background-image: url(../img/cover4.jpeg);
 }
 
 .recorder-arm  {
@@ -392,6 +412,7 @@ header .header-vinyl-disc-move{
     background-position: center;
     transform-origin: 85% 8%;
     transform: rotate(-15deg);
+    transition: 1s;
 }
 
 /* 撥放器 */
@@ -428,6 +449,7 @@ header .header-vinyl-disc-move{
     width: auto;
     height: 100%;
     margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -480,6 +502,29 @@ header .header-vinyl-disc-move{
     width: 100%;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.player-timeline-on{
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    animation-name: none;
+    animation-duration: unset;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
+}
+
+@keyframes timecode {
+    0%{
+        width: 0%;
+    }
+    
+    99%{
+        width: 100%;
+    }
+    100%{
+        width: 100%;
+    }
 }
 
 .listen-vinyllist{
@@ -535,6 +580,57 @@ header .header-vinyl-disc-move{
     margin-bottom: 20px;
     flex-shrink: 0;
 }
+
+.list-train-vinyl-disc-move{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s;
+    z-index: 1;
+}
+
+.list-cover0{
+    background-image: url(../img/cover0.jpeg);
+}
+.list-mask0{
+    background-image: url(../img/cover0.jpeg);
+}
+
+.list-cover1{
+    background-image: url(../img/cover1.jpeg);
+}
+.list-mask1{
+    background-image: url(../img/cover1.jpeg);
+}
+
+.list-cover2{
+    background-image: url(../img/cover2.jpeg);
+}
+.list-mask2{
+    background-image: url(../img/cover2.jpeg);
+}
+
+.list-cover3{
+    background-image: url(../img/cover3.jpeg);
+}
+.list-mask3{
+    background-image: url(../img/cover3.jpeg);
+}
+
+.list-cover4{
+    background-image: url(../img/cover4.jpeg);
+}
+.list-mask4{
+    background-image: url(../img/cover4.jpeg);
+}
+
+.list-cover5{
+    background-image: url(../img/cover5.jpeg);
+}
+.list-mask5{
+    background-image: url(../img/cover5.jpeg);
+}
+
 
 /* CONTACT SECTION 手機版 */
 .contactsection{
@@ -800,6 +896,22 @@ footer{
         background-repeat: no-repeat;
         background-size: cover;
         /* transition: 1s; */
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: calc(50% - 50%);
+        left: calc(50% - 50%);
+        width: 150%;
+        height: 150%;
+        backdrop-filter: blur(15px) grayscale(1) brightness(60%);
+        /* background-color: #ba3715; */
+        /* transform-origin: center center;
+        transform: scale(2); */
     }
 
     .header-container{
@@ -807,7 +919,9 @@ footer{
         width: 100%;
         height: 100%;
         padding: 120px 40px 40px 40px;
-        backdrop-filter: blur(15px) grayscale(1) brightness(60%);
+        /* backdrop-filter: blur(15px) grayscale(1) brightness(60%); */
+        /* transform: scale(2); */
+        /* margin-top: -30px; */
     }
 
     .web-header-row{

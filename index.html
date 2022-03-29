@@ -31,7 +31,7 @@
                     </div>
                     <div class="web-nav-col-l display-n">
                         <h3 class="menu-btn-link">
-                            <a href="./store.html" target="_blank">
+                            <a href="./store.html">
                                 Store
                             </a>
                         </h3>
@@ -183,11 +183,11 @@
                         <div class="listen-player-row row">
                             <div class="player-col-l">
                                 <div class="player-pic-wrap">
-                                    <img src="./img/cover1-kana.jpeg" alt="">
+                                    <img src="./img/cover4.jpeg" alt="">
                                 </div>
                                 <div class="player-title">
-                                    <h4 class="player-title-name">Silhouette</h4>
-                                    <p class="player-title-artist">KANA-BOON</p>
+                                    <h4 class="player-title-name">踊り子</h4>
+                                    <p class="player-title-artist">vaundy</p>
                                 </div>
                             </div>
                             <div class="player-col-r">
@@ -204,6 +204,7 @@
                         </div>
 
                         <div class="player-timeline">
+                            <div class="player-timeline-on"></div>
                         </div>
 
                     </div>
@@ -211,52 +212,52 @@
                 <div class="listen-vinyllist">
                     <div class="list-train">
                         <div class="list-train-vinyl vinyl">
-                            <div class="header-vinyl-disc-move">
+                            <div class="list-train-vinyl-disc-move">
                                 <div class="vinyl-disc">
                                 </div>
-                                <div class="vinyl-mask"></div>
+                                <div class="vinyl-mask list-mask0"></div>
                             </div>
-                            <div class="vinyl-cover"></div>
+                            <div class="vinyl-cover list-cover0"></div>
                         </div>
                         <div class="list-train-vinyl vinyl">
-                            <div class="header-vinyl-disc-move">
+                            <div class="list-train-vinyl-disc-move">
                                 <div class="vinyl-disc">
                                 </div>
-                                <div class="vinyl-mask"></div>
+                                <div class="vinyl-mask list-mask1"></div>
                             </div>
-                            <div class="vinyl-cover"></div>
+                            <div class="vinyl-cover list-cover1"></div>
                         </div>
                         <div class="list-train-vinyl vinyl">
-                            <div class="header-vinyl-disc-move">
+                            <div class="list-train-vinyl-disc-move">
                                 <div class="vinyl-disc">
                                 </div>
-                                <div class="vinyl-mask"></div>
+                                <div class="vinyl-mask list-mask2"></div>
                             </div>
-                            <div class="vinyl-cover"></div>
+                            <div class="vinyl-cover list-cover2"></div>
                         </div>
                         <div class="list-train-vinyl vinyl">
-                            <div class="header-vinyl-disc-move">
+                            <div class="list-train-vinyl-disc-move">
                                 <div class="vinyl-disc">
                                 </div>
-                                <div class="vinyl-mask"></div>
+                                <div class="vinyl-mask list-mask3"></div>
                             </div>
-                            <div class="vinyl-cover"></div>
+                            <div class="vinyl-cover list-cover3"></div>
                         </div>
                         <div class="list-train-vinyl vinyl">
-                            <div class="header-vinyl-disc-move">
+                            <div class="list-train-vinyl-disc-move">
                                 <div class="vinyl-disc">
                                 </div>
-                                <div class="vinyl-mask"></div>
+                                <div class="vinyl-mask list-mask4"></div>
                             </div>
-                            <div class="vinyl-cover"></div>
+                            <div class="vinyl-cover list-cover4"></div>
                         </div>
                         <div class="list-train-vinyl vinyl">
-                            <div class="header-vinyl-disc-move">
+                            <div class="list-train-vinyl-disc-move">
                                 <div class="vinyl-disc">
                                 </div>
-                                <div class="vinyl-mask"></div>
+                                <div class="vinyl-mask list-mask5"></div>
                             </div>
-                            <div class="vinyl-cover"></div>
+                            <div class="vinyl-cover list-cover5"></div>
                         </div>
                     </div>
                     <div class="list-toggle">
@@ -347,7 +348,7 @@
                 </div>
                 <div class="footer-col-r">
                     <h5>
-                        <a href="./store.html" target="_blank">
+                        <a href="./store.html">
                             To Store
                         </a>
                     </h5>
@@ -383,8 +384,8 @@
         // $(window).resize(rwdClass());
 
         // 輪播牆時間======================================================
-        artistnameArray = ['Radiohead', 'KANA-BOON', '東京事変', 'Asian Kung-Fu Generation']
-        albumnameArray = ['OK Computer', 'TIME', '大発見', 'ソルファ']
+        artistnameArray = ['Radiohead', 'KANA-BOON', '東京事変', 'Asian Kung-Fu Generation', 'vaundy', 'Breakbot']
+        albumnameArray = ['OK Computer', 'TIME', '大発見', 'ソルファ', '踊り子', 'By Your Side']
 
         if ($(window).width() >= 768) {
             $('header').addClass('webjq-header-bg');
@@ -526,8 +527,109 @@
 
         });
 
-        // 文字跑馬燈 手機版本
-        // $('.header-slider1').css('transform','translateX(-100%)')
+        // 黑膠唱片撥放區==========================
+        songnameArray = ['Paranoid Android', 'Silhouette', '恐るべき大人達', 'リライト', '踊り子', "Baby I'm Yours"];
+        songlengthArray = ['10', '200', '150', '70', '90', '280'];
+
+        // 唱片hover
+        $('.list-train-vinyl').mouseenter(function () {
+            console.log($(this));
+            $(this).children('.vinyl-cover').css('transform', 'translateX(-18%)').prev('.list-train-vinyl-disc-move').css('transform', 'translateX(25%) rotate(110deg)');
+        })
+        $('.list-train-vinyl').mouseleave(function () {
+            $(this).children('.vinyl-cover').css('transform', 'translateX(0%)').prev('.list-train-vinyl-disc-move').css('transform', 'translateX(0%) rotate(0deg)');
+        })
+
+        // 唱片換資料
+
+        let dataTrigger = 4;
+
+        $('.list-train-vinyl').click(function () {
+            dataTrigger = $(this).index();
+            console.log(dataTrigger);
+
+            $('.play-on').removeClass('display-n');
+            $('.play-off').addClass('display-n');
+
+            $('.recorder-arm').css('transform', 'rotate(-15deg)');
+            $('.recorder-vinyl-disc-move').css('transform', 'rotate(0deg)');
+            $('.recorder-vinyl-disc-move').css('animation-name', 'none');
+            $('.player-timeline-on').css('animation-name', 'none');
+            $('.player-timeline-on').css('animation-duration', `none`);
+
+            $('.recorder-vinyl-disc-move').children('.vinyl-mask').css('opacity', '0');
+            $('.recorder-vinyl-disc-move').children('.vinyl-mask').css('background-image', `url(./img/cover${dataTrigger}.jpeg)`);
+            $('.recorder-vinyl-disc-move').children('.vinyl-mask').css('opacity', '1');
+
+            console.log($('.player-pic-wrap').children('img').attr('src'));
+            $('.player-pic-wrap').children('img').attr('src', `./img/cover${dataTrigger}.jpeg`);
+
+            $('.player-title-artist').text(artistnameArray[dataTrigger]);
+            $('.player-title-name').text(songnameArray[dataTrigger]);
+
+        });
+
+        // 播放唱片
+        $('.play-on').removeClass('display-n');
+        $('.play-off').addClass('display-n');
+        $('.recorder-vinyl-disc-move').css('transform', 'rotate(0deg)');
+        $('.recorder-arm').css('transform', 'rotate(-15deg)');
+        $('.player-timeline-on').css('animation-name', 'none');
+        $('.player-timeline-on').css('animation-duration', `none`);
+
+        $('.play-on').click(function () {
+            $('.recorder-arm').css('transform', 'rotate(0deg)');
+            $('.play-on').addClass('display-n');
+            $('.play-off').removeClass('display-n');
+            $('.recorder-vinyl-disc-move').css('animation-name', 'spinning');
+            $('.player-timeline-on').css('animation-name', 'timecode');
+            $('.player-timeline-on').css('animation-duration', `${songlengthArray[dataTrigger]}s`);
+        });
+        $('.play-off').click(function () {
+            $('.recorder-arm').css('transform', 'rotate(-15deg)');
+            $('.play-off').addClass('display-n');
+            $('.play-on').removeClass('display-n');
+            $('.recorder-vinyl-disc-move').css('animation-name', 'none');
+            $('.player-timeline-on').css('animation-name', 'none');
+            $('.player-timeline-on').css('animation-duration', `none`);
+        });
+
+        $('.player-timeline-on').on('animationend',function(){
+            $('.recorder-arm').css('transform', 'rotate(-15deg)');
+            $('.play-off').addClass('display-n');
+            $('.play-on').removeClass('display-n');
+            $('.recorder-vinyl-disc-move').css('animation-name', 'none');
+            $('.player-timeline-on').css('animation-name', 'none');
+            $('.player-timeline-on').css('animation-duration', `none`);
+        })
+
+        // let stoplengthTrigger = 0;
+        // let stopgoalTrigger = 0;
+        // stoplengthTrigger = parseInt($('.player-timeline-on').css('width'));
+        // stopgoalTrigger = parseInt($('.player-timeline').css('width'));
+
+        // function triggerListening() {
+        //     stoplengthTrigger = parseInt($('.player-timeline-on').css('width'));
+        //     stopgoalTrigger = parseInt($('.player-timeline').css('width'));
+        //     console.log('slt', stoplengthTrigger);
+        //     console.log('sgt', stopgoalTrigger);
+        //     console.log(stoplengthTrigger - stopgoalTrigger == 0);
+
+        //     if (stoplengthTrigger - stopgoalTrigger == 0) {
+        //         $('.recorder-arm').css('transform', 'rotate(-15deg)');
+        //         $('.play-off').addClass('display-n');
+        //         $('.play-on').removeClass('display-n');
+        //         $('.recorder-vinyl-disc-move').css('animation-name', 'none');
+        //         $('.player-timeline-on').css('animation-name', 'none');
+        //         $('.player-timeline-on').css('animation-duration', `none`);
+        //     }
+        // }
+
+        // setInterval(triggerListening, 100);
+
+
+
+
 
 
     </script>
