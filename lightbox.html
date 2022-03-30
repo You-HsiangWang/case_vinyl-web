@@ -194,7 +194,7 @@
                         </div>
 
                         <div class="lightbox-tracklist-playbtn">
-                            <i class="fa-regular fa-circle-play lightbox-tracklist-playbtn-off"></i>
+                            <i class="fa-regular fa-circle-play lightbox-tracklist-playbtn-off nowplaying addfirst"></i>
                             <i class="fa-regular fa-circle-pause lightbox-tracklist-playbtn-on display-n"></i>
                         </div>
                         <div class="lightbox-tracklist-mvbtn">
@@ -391,7 +391,8 @@
                                 </div>
 
                                 <div class="lightbox-tracklist-playbtn">
-                                    <i class="fa-regular fa-circle-play lightbox-tracklist-playbtn-off"></i>
+                                    <i
+                                        class="fa-regular fa-circle-play lightbox-tracklist-playbtn-off nowplaying addfirst"></i>
                                     <i class="fa-regular fa-circle-pause lightbox-tracklist-playbtn-on display-n"></i>
                                 </div>
                                 <div class="lightbox-tracklist-mvbtn">
@@ -548,7 +549,7 @@
                     <img src="./img/cover1-kana.jpeg" alt="">
                 </div>
                 <div class="player-title">
-                    <h4 class="player-title-name">Silhouette</h4>
+                    <h4 class="player-title-name">タイムアウト</h4>
                     <p class="player-title-artist">KANA-BOON</p>
                 </div>
             </div>
@@ -563,6 +564,7 @@
                     <div class="volume-line"></div>
                 </div>
                 <div class="player-timeline web-player-timeline display-n">
+                    <div class="timecode web-timecode"></div>
                 </div>
             </div>
             <div class="player-col-cart">
@@ -577,6 +579,7 @@
         </div>
 
         <div class="player-timeline">
+            <div class="timecode phone-timecode"></div>
         </div>
     </div>
 
@@ -697,7 +700,7 @@
                     pageUpdate();
                     console.log('rightafter', pageweb);
 
-                    if (pageweb >= 5) {
+                    if (pageweb >= 6) {
                         $(websize).one('transitionend', function () {
                             pageweb = 1;
                             pageUpdatenotrans()
@@ -818,6 +821,122 @@
         })
 
         // =================================================
+        // 撥放器抓資料
+        // 定義變數
+        let listbtnPlay = $('.lightbox-tracklist-col').find('.lightbox-tracklist-playbtn-off');
+        let listbtnStop = $('.lightbox-tracklist-col').find('.lightbox-tracklist-playbtn-on');
+        let listsongName = 0;
+        let playerPlay = $('.lightbox-musicplayer').find('.player-play').children('.play-on');
+        let playerStop = $('.lightbox-musicplayer').find('.player-play').children('.play-off');
+        let playersongName = $('.lightbox-musicplayer').find('.player-title').children('.player-title-name');
+        let whichSong = 0;
+        // 播放條
+        songtimeArray = ['10', '300', '240', '20', '30', '60', '120'];
+
+        // 初始化
+        $('.lightbox-tracklist-col').find('.lightbox-tracklist-playbtn-off').removeClass('display-n');
+        $('.lightbox-tracklist-col').find('.lightbox-tracklist-playbtn-on').addClass('display-n');
+        $('.lightbox-musicplayer').find('.player-title').children('.player-title-name').text('タイムアウト');
+        $('.lightbox-musicplayer').find('.player-play').children('.play-on').removeClass('display-n');
+        $('.lightbox-musicplayer').find('.player-play').children('.play-off').addClass('display-n');
+        $('.nowplaying').removeClass('.nowplaying');
+        $('.addfirst').addClass('nowplaying');
+        $('.timecode').css('animation-duration', `none`);
+        $('.timecode').css('animation-name', `none`);
+
+        let switchpoint = $(window).width();
+        $(window).resize(function () {
+            switchpoint = $(window).width();
+            console.log(switchpoint);
+
+            if (switchpoint == 768) {
+                $('.lightbox-tracklist-col').find('.lightbox-tracklist-playbtn-off').removeClass('display-n');
+                $('.lightbox-tracklist-col').find('.lightbox-tracklist-playbtn-on').addClass('display-n');
+                $('.lightbox-musicplayer').find('.player-title').children('.player-title-name').text('タイムアウト');
+                $('.lightbox-musicplayer').find('.player-play').children('.play-on').removeClass('display-n');
+                $('.lightbox-musicplayer').find('.player-play').children('.play-off').addClass('display-n');
+                $('.nowplaying').removeClass('.nowplaying');
+                $('.addfirst').addClass('nowplaying');
+                whichSong = 0;
+                $('.timecode').css('animation-duration', `none`);
+                $('.timecode').css('animation-name', `none`);
+            }
+        });
+
+        listbtnPlay.click(function () {
+            $(this).addClass('display-n');
+            $(this).siblings('.lightbox-tracklist-playbtn-on').removeClass('display-n');
+            $(this).closest('.lightbox-tracklist-col').siblings().find('.lightbox-tracklist-playbtn-on').addClass('display-n');
+            $(this).closest('.lightbox-tracklist-col').siblings().find('.lightbox-tracklist-playbtn-off').removeClass('display-n');
+            playerPlay.addClass('display-n');
+            playerStop.removeClass('display-n');
+
+            listsongName = $(this).parent('.lightbox-tracklist-playbtn').prev('.lightbox-tracklist-songname').children('h4').eq(1).text();
+            console.log(listsongName);
+            playersongName.text(`${listsongName}`);
+
+            whichSong = $(this).closest('.lightbox-tracklist-col').index();
+            console.log(whichSong);
+
+            $(this).addClass('nowplaying');
+            $(this).closest('.lightbox-tracklist-col').siblings().find('.lightbox-tracklist-playbtn-off').removeClass('nowplaying');
+
+            $('.timecode').css('animation-duration', `${songtimeArray[whichSong]}s`);
+            $('.timecode').css('animation-name', 'timecode');
+
+        });
+        listbtnStop.click(function () {
+            $(this).addClass('display-n');
+            $(this).siblings('.lightbox-tracklist-playbtn-off').removeClass('display-n');
+            playerStop.addClass('display-n');
+            playerPlay.removeClass('display-n');
+
+            $('.timecode').css('animation-duration', 'none');
+            $('.timecode').css('animation-name', 'none');
+        });
+
+        playerPlay.click(function () {
+            $(this).addClass('display-n');
+            $(this).siblings('.play-off').removeClass('display-n');
+
+            $('.nowplaying').addClass('display-n');
+            $('.nowplaying').siblings('.lightbox-tracklist-playbtn-on').removeClass('display-n');
+
+            $('.timecode').css('animation-duration', `${songtimeArray[whichSong]}s`);
+            $('.timecode').css('animation-name', 'timecode');
+        });
+
+        playerStop.click(function () {
+            $(this).addClass('display-n');
+            $(this).siblings('.play-on').removeClass('display-n');
+
+            $('.nowplaying').removeClass('display-n');
+            $('.nowplaying').siblings('.lightbox-tracklist-playbtn-on').addClass('display-n');
+            $('.timecode').css('animation-duration', 'none');
+            $('.timecode').css('animation-name', 'none');
+        });
+
+
+        // ====================================================
+        // 資料切換toggle only手機版本
+        $('.lightbox-item').find('.lightbox-tracklist-wrap').removeClass('display-n');
+        $('.lightbox-item').find('.lightbox-productdetail-wrap').addClass('display-n');
+        $('.lightbox-item').find('.lightbox-filter-tracklist').css('border-bottom', '#6ba09e solid 2px');
+        $('.lightbox-item').find('.lightbox-filter-productdetail').css('border-bottom', 'transparent solid 2px');
+
+        $('.lightbox-item').find('.lightbox-filter-tracklist').click(function () {
+            $('.lightbox-item').find('.lightbox-tracklist-wrap').removeClass('display-n');
+            $('.lightbox-item').find('.lightbox-productdetail-wrap').addClass('display-n');
+            $('.lightbox-item').find('.lightbox-filter-tracklist').css('border-bottom', '#6ba09e solid 2px');
+            $('.lightbox-item').find('.lightbox-filter-productdetail').css('border-bottom', 'transparent solid 2px');
+        });
+        $('.lightbox-item').find('.lightbox-filter-productdetail').click(function () {
+            $('.lightbox-item').find('.lightbox-tracklist-wrap').addClass('display-n');
+            $('.lightbox-item').find('.lightbox-productdetail-wrap').removeClass('display-n');
+            $('.lightbox-item').find('.lightbox-filter-tracklist').css('border-bottom', 'transparent solid 2px');
+            $('.lightbox-item').find('.lightbox-filter-productdetail').css('border-bottom', '#6ba09e solid 2px');
+        });
+
     </script>
 </body>
 

@@ -455,9 +455,10 @@ nav {
 }
 
 .player-col-l{
-    /* width: 60%; */
+    width: 40%;
     height: 100%;
     display: flex;
+    overflow: hidden;
 }
 
 .player-pic-wrap{
@@ -539,6 +540,24 @@ nav {
     width: 100%;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.timecode{
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    animation-name: none;
+    animation-duration: none;
+    animation-timing-function: linear;
+}
+
+@keyframes timecode {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
 }
 
 /* FOOTER 手機版*/
@@ -948,9 +967,10 @@ footer{
     }
     
     .player-col-l{
-        width: auto;
+        width: 50%;
         height: 100%;
         display: flex;
+        overflow: hidden;
     }
     
     .player-title{
