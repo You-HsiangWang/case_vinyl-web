@@ -239,6 +239,7 @@ nav {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
+    transform: translateX(-20%);
 }
 
 .lightbox-item-pic-col{
@@ -254,10 +255,32 @@ nav {
 .lightbox-item-pic{
     width: 28rem;
     height: 28rem;
-    background-image: url(../img/kana0.jpeg);
+    /* background-image: url(../img/kana0.jpeg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.item-pic0{
+    background-image: url(../img/kana4.jpeg);
+}
+.item-pic1{
+    background-image: url(../img/kana0.jpeg);
+}
+.item-pic2{
+    background-image: url(../img/kana1.jpeg);
+}
+.item-pic3{
+    background-image: url(../img/kana2.jpeg);
+}
+.item-pic4{
+    background-image: url(../img/kana3.jpeg);
+}
+.item-pic5{
+    background-image: url(../img/kana4.jpeg);
+}
+.item-pic6{
+    background-image: url(../img/kana0.jpeg);
 }
 
 .lightbox-item-sliderdots-wrap{

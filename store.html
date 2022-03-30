@@ -110,36 +110,132 @@
 
     <header id="header">
         <div class="header-container">
+            <div class="click-left">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="click-right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
             <div class="header-bg">
                 <!-- <img src="./img/band0.jpeg" alt="" style="height: 100%; width: 100%;"> -->
             </div>
             <div class="header-wrap">
-                <div class="header-train">
-                    <div class="artist-slider">
-                        <div class="artist-card">
+                <div class="header-train train1">
+                    <div class="artist-slider slider3" id="slider3">
+                        <div class="artist-card card-3">
+                            <div class="artist-name">
+                                <h3>Asian Kung-Fu Generation</h3>
+                            </div>
+                            <div class="artist-pic artist-pic3"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider4">
+                        <div class="artist-card card-4">
+                            <div class="artist-name">
+                                <h3>vaundy</h3>
+                            </div>
+                            <div class="artist-pic artist-pic4"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider0">
+                        <div class="artist-card card-0">
                             <div class="artist-name">
                                 <h3>Radiohead</h3>
                             </div>
                             <div class="artist-pic artist-pic0"></div>
                         </div>
                     </div>
-                    <div class="artist-slider">
-                        <div class="artist-card">
+                    <div class="artist-slider" id="slider1">
+                        <div class="artist-card card-1">
                             <div class="artist-name">
                                 <h3>KANA-BOON</h3>
                             </div>
                             <div class="artist-pic artist-pic1"></div>
                         </div>
                     </div>
-                    <div class="artist-slider">
-                        <div class="artist-card">
+                    <div class="artist-slider" id="slider2">
+                        <div class="artist-card card-2">
                             <div class="artist-name">
-                                <h3>Asian Kung-Fu Generation</h3>
+                                <h3>東京事変</h3>
                             </div>
                             <div class="artist-pic artist-pic2"></div>
                         </div>
                     </div>
+                    <div class="artist-slider" id="slider3">
+                        <div class="artist-card card-3">
+                            <div class="artist-name">
+                                <h3>Asian Kung-Fu Generation</h3>
+                            </div>
+                            <div class="artist-pic artist-pic3"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider4">
+                        <div class="artist-card card-4">
+                            <div class="artist-name">
+                                <h3>vaundy</h3>
+                            </div>
+                            <div class="artist-pic artist-pic4"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider0">
+                        <div class="artist-card card-0">
+                            <div class="artist-name">
+                                <h3>Radiohead</h3>
+                            </div>
+                            <div class="artist-pic artist-pic0"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider1">
+                        <div class="artist-card card-1">
+                            <div class="artist-name">
+                                <h3>KANA-BOON</h3>
+                            </div>
+                            <div class="artist-pic artist-pic1"></div>
+                        </div>
+                    </div>
                 </div>
+                <!-- <div class="header-train train2">
+                    <div class="artist-slider" id="slider0">
+                        <div class="artist-card card-0">
+                            <div class="artist-name">
+                                <h3>Radiohead</h3>
+                            </div>
+                            <div class="artist-pic artist-pic0"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider1">
+                        <div class="artist-card card-1">
+                            <div class="artist-name">
+                                <h3>KANA-BOON</h3>
+                            </div>
+                            <div class="artist-pic artist-pic1"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider2">
+                        <div class="artist-card card-2">
+                            <div class="artist-name">
+                                <h3>東京事変</h3>
+                            </div>
+                            <div class="artist-pic artist-pic2"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider3">
+                        <div class="artist-card card-3">
+                            <div class="artist-name">
+                                <h3>Asian Kung-Fu Generation</h3>
+                            </div>
+                            <div class="artist-pic artist-pic3"></div>
+                        </div>
+                    </div>
+                    <div class="artist-slider" id="slider4">
+                        <div class="artist-card card-4">
+                            <div class="artist-name">
+                                <h3>vaundy</h3>
+                            </div>
+                            <div class="artist-pic artist-pic4"></div>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </header>
@@ -399,6 +495,85 @@
         });
         // ======================================================
         // 自動輪播牆
+        let page = 0;
+
+        $('.click-right').one('click', (pageMoveright));
+        $('.click-left').one('click', (pageMoveleft));
+
+        function pageMoveright() {
+            page++;
+            console.log('rightbefore', page);
+            pageUpdateright();
+            console.log('rightafter', page);
+
+            if (page >= 5) {
+                $('.header-train').one('transitionend', function () {
+                    page = 0;
+                    pageUpdaterightnotrans()
+                })
+            }
+
+            $('.header-train').on('transitionend', function () {
+                $('.header-bg').css('transition','.5s').css('background-image', `url(./img/band${page}.jpeg)`);
+            });
+
+            $('.header-train').one('transitionend', function () {
+                $('.click-right').one('click', (pageMoveright));
+            })
+        };
+
+        function pageMoveleft() {
+            page--;
+            console.log('leftbefore', page);
+            pageUpdateleft();
+            console.log('leftafter', page);
+
+            if (page < 0) {
+                $('.header-train').one('transitionend', function () {
+                    page = 4;
+                    pageUpdateleftnotrans();
+                    console.log('leftnonafter', page);
+                })
+            };
+
+            $('.header-train').on('transitionend', function () {
+                $('.header-bg').css('transition','.5s').css('background-image', `url(./img/band${page}.jpeg)`);
+            });
+
+            $('.header-train').one('transitionend', function () {
+                $('.click-left').one('click', (pageMoveleft));
+            });
+        };
+
+        function pageUpdateright() {
+            $('.header-train').css('transition', '1.5s').css('transform', `translateX(${page * -20}%)`);
+        };
+
+        function pageUpdaterightnotrans() {
+            $('.header-train').css('transition', 'none').css('transform', `translateX(${page * -20}%)`);
+        };
+
+        function pageUpdateleft() {
+            $('.header-train').css('transition', '1.5s').css('transform', `translateX(${(page) * -20}%)`);
+        };
+        function pageUpdateleftnotrans() {
+            $('.header-train').css('transition', 'none').css('transform', `translateX(${page * -20}%)`);
+        };
+
+        let idintervalOne = null;
+
+        function startInterval() {
+            idintervalOne = setInterval(pageMoveright, 5000);
+        };
+
+        startInterval();
+
+        $('.header-container').mouseenter(function () {
+            clearInterval(idintervalOne);
+        });
+        $('.header-container').mouseleave(function () {
+            startInterval();
+        });
 
         // 商品欄位自動填資料
 

@@ -201,7 +201,7 @@ header  {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/band1.jpeg);
+    background-image: url(../img/band0.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -220,15 +220,41 @@ header  {
 }
 
 .header-train{
-    width: 300%;
+    width: 500%;;
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     flex-shrink: 0;
 }
 
+.click-left, .click-right{
+    background-color: transparent;
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    z-index: 96;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+}
+.click-left{
+    top: 0;
+    left: 0;
+    justify-content: flex-end;
+}
+.click-right{
+    top: 0;
+    right: 0;
+}
+
+.click-left i, .click-right i{
+    margin: 0 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .artist-slider{
-    width: 33.33%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,6 +266,23 @@ header  {
     height: 24rem;
     background-color: #df1624;
 }
+
+.card-0{
+    background-color: rgb(24, 24, 24);
+}
+.card-1{
+    background-color: #3f85b5;
+}
+.card-2{
+    background-color: #69686e;
+}
+.card-3{
+    background-color: #df1624;
+}
+.card-4{
+    background-color: #E00405;
+}
+
 
 .artist-name{
     width: 80%;
@@ -269,6 +312,12 @@ header  {
 }
 .artist-pic2{
     background-image: url(../img/band2.jpeg);
+}
+.artist-pic3{
+    background-image: url(../img/band3.jpeg);
+}
+.artist-pic4{
+    background-image: url(../img/band4.jpeg);
 }
 
 /* SHOP SECTION 手機版本 */
@@ -314,16 +363,21 @@ header  {
 }
 
 .shop-item-row{
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    flex-grow: 0;
 }
 
 .shop-item-col{
+    width: 50%;
     flex-grow: 0;
     flex-shrink: 0;
     padding-bottom: 20px;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .shop-item-card{
@@ -658,7 +712,7 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url(../img/band1.jpeg);
+        background-image: url(../img/band0.jpeg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -678,18 +732,47 @@ footer{
         max-width: 1280px;
         margin: auto;
         padding: 0 100px;
+        position: relative;
     }
 
     .header-train{
-        width: 300%;
+        width: 500%;
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
         flex-shrink: 0;
+        transform: translateX(0%);
     }
 
+    .click-left, .click-right{
+        background-color: transparent;
+        width: 15%;
+        height: 100%;
+        position: absolute;
+        z-index: 96;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 4rem;
+    }
+    .click-left{
+        top: 0;
+        left: 0;
+        justify-content: flex-end;
+    }
+    .click-right{
+        top: 0;
+        right: 0;
+    }
+
+    .click-left i, .click-right i{
+        margin: 0 20px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+
     .artist-slider{
-        width: 33.33%;
+        width: 20%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -699,7 +782,6 @@ footer{
     .artist-card{
         width: 85%;
         height: 20rem;
-        background-color: #df1624;
         display: flex;
     }
 
@@ -770,6 +852,7 @@ footer{
         padding-bottom: 20px;
         width: 23%;
         margin: 0 1%;
+        align-items: stretch;
     }
 
     .shop-item-card{
