@@ -545,6 +545,24 @@
             });
         };
 
+        function pageMoverightno() {
+            page++;
+            console.log('rightbefore', page);
+            pageUpdateright();
+            console.log('rightafter', page);
+
+            if (page >= 5) {
+                $('.header-train').one('transitionend', function () {
+                    page = 0;
+                    pageUpdaterightnotrans()
+                })
+            }
+
+            $('.header-train').on('transitionend', function () {
+                $('.header-bg').css('transition','.5s').css('background-image', `url(./img/band${page}.jpeg)`);
+            });
+        };
+
         function pageUpdateright() {
             $('.header-train').css('transition', '1.5s').css('transform', `translateX(${page * -20}%)`);
         };
@@ -563,7 +581,7 @@
         let idintervalOne = null;
 
         function startInterval() {
-            idintervalOne = setInterval(pageMoveright, 5000);
+            idintervalOne = setInterval(pageMoverightno, 5000);
         };
 
         startInterval();
