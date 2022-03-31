@@ -106,64 +106,76 @@
         </div>
     </nav>
     <header id="header">
-        <div class="header-container">
-            <div class="header-title">
-                <div class="header-train">
-                    <h2 class="header-slogan header-slider1">WE VINYL PLACE FOR MUSIC LOVERS</h2>
-                    <h2 class="header-slogan header-slider2">WE VINYL PLACE FOR MUSIC LOVERS</h2>
-                </div>
-                <div class="header-train">
-                    <h2 class="header-slogan header-slider1">VINYL PLACE FOR MUSIC LOVERS WE</h2>
-                    <h2 class="header-slogan header-slider2">VINYL PLACE FOR MUSIC LOVERS WE</h2>
-                </div>
-                <div class="header-train">
-                    <h2 class="header-slogan header-slider1">PLACE FOR MUSIC LOVERS WE VINYL</h2>
-                    <h2 class="header-slogan header-slider2">PLACE FOR MUSIC LOVERS WE VINYL</h2>
-                </div>
-            </div>
-            <div class="header-vinyl vinyl">
-                <div class="header-vinyl-disc-move phonejq-rolling2">
-                    <div class="vinyl-disc">
+        <div class="bgcover bgcover-bt display-n"></div>
+        <div class="bgcover bgcover-top display-n"></div>
+        <div class="bgcover bgcover-left display-n"></div>
+        <div class="bgcover bgcover-right display-n"></div>
+        <!-- <div class="svgbg">
+            <svg id="blurred">
+                <filter width="1920" height="1080" x="0" y="0" id="blur" filterUnits="userSpaceOnUse">
+                    <feGaussianBlur color-interpolation-filters="sRGB" stdDeviation="15"></feGaussianBlur>
+                </filter>
+                <image x="0" y="0" width="1920" height="1080" style="filter:url(#blur)" href="./img/band1.jpeg"></image>
+            </svg>
+        </div> -->
+            <div class="header-container">
+                <div class="header-title">
+                    <div class="header-train">
+                        <h2 class="header-slogan header-slider1">WE VINYL PLACE FOR MUSIC LOVERS</h2>
+                        <h2 class="header-slogan header-slider2">WE VINYL PLACE FOR MUSIC LOVERS</h2>
                     </div>
-                    <div class="vinyl-mask alljs-header-bg"></div>
+                    <div class="header-train">
+                        <h2 class="header-slogan header-slider1">VINYL PLACE FOR MUSIC LOVERS WE</h2>
+                        <h2 class="header-slogan header-slider2">VINYL PLACE FOR MUSIC LOVERS WE</h2>
+                    </div>
+                    <div class="header-train">
+                        <h2 class="header-slogan header-slider1">PLACE FOR MUSIC LOVERS WE VINYL</h2>
+                        <h2 class="header-slogan header-slider2">PLACE FOR MUSIC LOVERS WE VINYL</h2>
+                    </div>
                 </div>
-                <div class="vinyl-cover alljs-header-bg phonejq-rolling1"></div>
-            </div>
-            <div class="web-header-row display-n">
-                <div class="web-header-col-l">
-                    <div class="web-header-vinyl vinyl">
-                        <div class="header-vinyl-disc-move webjq-rolling2">
-                            <div class="vinyl-disc">
+                <div class="header-vinyl vinyl">
+                    <div class="header-vinyl-disc-move phonejq-rolling2">
+                        <div class="vinyl-disc">
+                        </div>
+                        <div class="vinyl-mask alljs-header-bg"></div>
+                    </div>
+                    <div class="vinyl-cover alljs-header-bg phonejq-rolling1"></div>
+                </div>
+                <div class="web-header-row display-n">
+                    <div class="web-header-col-l">
+                        <div class="web-header-vinyl vinyl">
+                            <div class="header-vinyl-disc-move webjq-rolling2">
+                                <div class="vinyl-disc">
+                                </div>
+                                <div class="vinyl-mask alljs-header-bg"></div>
                             </div>
-                            <div class="vinyl-mask alljs-header-bg"></div>
+                            <div class="vinyl-cover alljs-header-bg webjq-rolling1"></div>
+                            <!-- <div class="vinyl-tag"></div> -->
                         </div>
-                        <div class="vinyl-cover alljs-header-bg webjq-rolling1"></div>
-                        <!-- <div class="vinyl-tag"></div> -->
-                    </div>
-                    <div class="web-header-artist">
-                        <div class="web-artist-pic webjq-header-bg"></div>
-                        <div class="web-artist-name">
-                            <h3 class="webjq-header-album">TIME</h3>
-                            <h4 class="webjq-header-artist">KANA-BOON</h4>
+                        <div class="web-header-artist">
+                            <div class="web-artist-pic webjq-header-bg"></div>
+                            <div class="web-artist-name">
+                                <h3 class="webjq-header-album">TIME</h3>
+                                <h4 class="webjq-header-artist">KANA-BOON</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="web-header-col-r">
-                    <div class="h2border">
-                        <h2>WE VINYL</h2>
-                    </div>
-                    <h3>
-                        PLACE FOR <br> VINYL <br>LOVERS
-                    </h3>
-                    <div class="web-header-col-r-swipe-down">
-                        <a href="#listensection">
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <p>Swipe Down</p>
-                        </a>
+                    <div class="web-header-col-r">
+                        <div class="h2border">
+                            <h2>WE VINYL</h2>
+                        </div>
+                        <h3>
+                            PLACE FOR <br> VINYL <br>LOVERS
+                        </h3>
+                        <div class="web-header-col-r-swipe-down">
+                            <a href="#listensection">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <p>Swipe Down</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </header>
 
     <div class="listensection" id="listensection">
@@ -385,6 +397,7 @@
         // }
 
         // $(window).resize(rwdClass());
+        // svg模糊測試
 
         // 輪播牆時間======================================================
         artistnameArray = ['Radiohead', 'KANA-BOON', '東京事変', 'Asian Kung-Fu Generation', 'vaundy', 'Breakbot']

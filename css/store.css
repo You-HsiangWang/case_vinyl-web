@@ -209,6 +209,40 @@ header  {
     position: absolute;
     z-index: -1;
 }
+.bgcover{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/* .bgcover-bt{
+    background: linear-gradient(90deg, rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -moz-linear-gradient(90deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -webkit-linear-gradient(90deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -o-linear-gradient(90deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+}
+.bgcover-top{
+    background: linear-gradient(-90deg,  rgb(186, 54, 21,0), rgba(186, 54, 21, 0)1%);
+    background: -moz-linear-gradient(-90deg,  rgb(186, 54, 21,0), rgba(186, 54, 21, 0)1%);
+    background: -webkit-linear-gradient(-90deg,  rgb(186, 54, 21,0), rgba(186, 54, 21, 0)1%);
+    background: -o-linear-gradient(-90deg,  rgb(186, 54, 21,0), rgba(186, 54, 21, 0)1%);
+}
+.bgcover-left{
+    background: linear-gradient(0deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -moz-linear-gradient(0deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -webkit-linear-gradient(0deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -o-linear-gradient(0deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+}
+.bgcover-right{
+    background: linear-gradient(180deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -moz-linear-gradient(180deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -webkit-linear-gradient(180deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+    background: -o-linear-gradient(180deg,  rgb(186, 54, 21), rgba(186, 54, 21, 0)1%);
+} */
 
 .header-wrap{
     width: 100%;

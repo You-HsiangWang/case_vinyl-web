@@ -916,6 +916,16 @@
             $('.timecode').css('animation-name', 'none');
         });
 
+        $('.timecode').on('animationend',function(){
+            playerStop.addClass('display-n');
+            playerStop.siblings('.play-on').removeClass('display-n');
+            $('.nowplaying').removeClass('display-n');
+            $('.nowplaying').siblings('.lightbox-tracklist-playbtn-on').addClass('display-n');
+            $('.timecode').css('animation-duration', 'none');
+            $('.timecode').css('animation-name', 'none');
+        // });
+        })
+
 
         // ====================================================
         // 資料切換toggle only手機版本
