@@ -84,9 +84,9 @@ nav {
     justify-content: space-between;
 }
 
-.nav-col-logo   {
+/* .nav-col-logo   {
     
-}
+} */
 
 .nav-logo{
     width: 50px;
@@ -98,21 +98,21 @@ nav {
     height: 100%;
 }
 
-.nav-col-menu  {
+/* .nav-col-menu  {
     
-} 
+}  */
 
-.nav-btn-menu-off   {
+/* .nav-btn-menu-off   {
     
-}
+} */
 
 .nav-btn-menu-off i {
     font-size: 30px;
 }
 
-.nav-btn-menu-on{
+/* .nav-btn-menu-on{
 
-}
+} */
 
 .nav-btn-menu-on i{
     font-size: 40px;
@@ -440,7 +440,7 @@ header  {
     transform-origin: center center;
     transform-style: preserve-3d;
     transform:rotateX(60deg) rotateZ(33deg);
-    box-shadow: rgba(0,0,0,1)2px 2px 1px, rgba(0, 0, 0, 0.7) 4px 4px 8px;
+    box-shadow: rgba(0,0,0,1) 2px 2px 1px, rgba(0, 0, 0, 0.7) 4px 4px 8px;
     transition: .5s;
 }
 
@@ -528,9 +528,9 @@ header  {
     background: url(../img/cover6.jpeg) no-repeat center / cover;
 }
 
-.shop-item-info{
+/* .shop-item-info{
     
-}
+} */
 
 .shop-item-info p{
     color: rgba(255, 255, 255, 0.7);
@@ -554,7 +554,7 @@ header  {
 .shop-item-card:hover .shop-item-pic{
     background-color: rgba(0, 0, 0, 0);
     transform: rotateX(0deg) rotateZ(0deg) scale(1.1);
-    box-shadow: rgba(0,0,0,0)2px 2px 1px, rgba(0, 0, 0, 0) 0px 2px 6px;
+    box-shadow: rgba(0,0,0,0) 2px 2px 1px, rgba(0, 0, 0, 0) 0px 2px 6px;
 }
 .shop-item-card:hover .shop-item-bg{
     background-color: rgba(255, 255, 255, 0.5);
@@ -921,7 +921,7 @@ footer{
         transform-origin: center center;
         transform-style: preserve-3d;
         transform:rotateX(60deg) rotateZ(33deg);
-        box-shadow: rgba(0,0,0,1)2px 2px 1px, rgba(0, 0, 0, 0.7) 4px 4px 8px;
+        box-shadow: rgba(0,0,0,1) 2px 2px 1px, rgba(0, 0, 0, 0.7) 4px 4px 8px;
         transition: .5s;
     }
 
