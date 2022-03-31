@@ -864,6 +864,8 @@
         });
 
         listbtnPlay.click(function () {
+            $('.timecode').css('animation-duration', 'none');
+            $('.timecode').css('animation-name', 'none');
             $(this).addClass('display-n');
             $(this).siblings('.lightbox-tracklist-playbtn-on').removeClass('display-n');
             $(this).closest('.lightbox-tracklist-col').siblings().find('.lightbox-tracklist-playbtn-on').addClass('display-n');
